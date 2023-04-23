@@ -1,0 +1,35 @@
+server:
+  port: 8180
+logging:
+  level:
+    root: debug
+spring:
+  config:
+    activate:
+      on-profile: localhost
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      username: kloadgen
+      password: kloadgen
+      database: bank-demo
+  cloud:
+    schemaRegistryClient:
+      endpoint: http://localhost:2181
+    stream:
+      kafka:
+        binder:
+          brokers: localhost
+          producer-properties:
+            schema.registry.url: http://localhost:8081
+          consumer-properties:
+            schema.registry.url: http://localhost:8081
+      schema:
+        avro:
+          subjectNamingStrategy: strategy.com.sngular.performance.RecordSubjectNameStrategy
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus

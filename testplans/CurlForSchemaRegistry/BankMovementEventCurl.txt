@@ -1,0 +1,6 @@
+curl --location --request POST 'http://localhost:8081/subjects/com.sngular.kloadgen.demo.BankMovementEvent/versions' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "schema": "{\"type\":\"record\",\"name\":\"BankMovementEvent\",\"namespace\":\"com.sngular.kloadgen.demo\",\"doc\":\"Container for the banking movement.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\",\"doc\":\"Movement Id\"},{\"name\":\"accountNumber\",\"type\":\"string\",\"doc\":\"Movement account Number\"},{\"name\":\"movement\",\"type\":{\"type\":\"enum\",\"name\":\"MovementType\",\"symbols\":[\"DEPOSIT\",\"WITHDRAW\"],\"doc\":\"Movement Type\"}},{\"name\":\"amount\",\"type\":\"float\",\"doc\":\"Movement amount\"},{\"name\":\"movementDate\",\"type\":{\"type\":\"long\",\"logicalType\":\"local-timestamp-millis\"},\"doc\":\"Movement Date Time when was produced\"},{\"name\":\"appliedDate\",\"type\":{\"type\":\"long\",\"logicalType\":\"local-timestamp-millis\"},\"doc\":\"Movement Date Time when was applied by the system\"}]}",
+    "schemaType": "AVRO"
+}'
