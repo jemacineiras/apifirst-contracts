@@ -1,0 +1,39 @@
+server:
+  port: 8080
+logging:
+  level:
+    root: info
+spring:
+  config:
+    activate:
+      on-profile: standalone
+  data:
+    mongodb:
+      host: mongodb.test
+      port: 27017
+      username: kloadgen
+      password: kloadgen
+      database: bank-demo
+  cloud:
+    stream:
+      schema-registry-client:
+        endpoint: http://schema-registry.test:2181
+      kafka:
+        binder:
+          configuration:
+            application:
+              id: bank-demo
+            value:
+              subject:
+                name:
+                  strategy: io.confluent.kafka.serializers.subject.RecordNameStrategy
+          brokers: kafka01.test
+          producer-properties:
+            schema.registry.url: http://schema-registry.test:8081
+          consumer-properties:
+            schema.registry.url: http://schema-registry.test:8081
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus

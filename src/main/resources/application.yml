@@ -1,0 +1,70 @@
+logging:
+  level:
+    root: info
+spring:
+  application:
+    name: bankdemo
+  data:
+    mongodb:
+      port: 27017
+      username: kloadgen
+      password: kloadgen
+      database: bank-demo
+  cloud:
+    schema:
+      avro:
+        dynamicSchemaGenerationEnabled: true
+    stream:
+      default:
+        contentType: application/*+avro
+      function:
+        definition: processData;accountEmitter;storeMovement;storeAccount
+      bindings:
+        storeMovement-in-0:
+          destination: com.sngular.kloadgen.bank.movement
+          group: storeMovementGroup
+          content-type: application/*+avro
+          consumer:
+            useNativeEncoding: true
+        storeAccount-in-0:
+          destination: com.sngular.kloadgen.bank.account
+          group: storeAccountGroup
+          content-type: application/*+avro
+          consumer:
+            useNativeEncoding: true
+        accountEmitter-out-0:
+          destination: com.sngular.kloadgen.bank.account.refresh
+          content-type: application/*+avro
+          producer:
+            useNativeEncoding: true
+        processData-in-0:
+          destination: com.sngular.kloadgen.bank.movement
+          group: processDataGroup
+          content-type: application/*+avro
+          consumer:
+            useNativeEncoding: true
+        processData-out-0:
+          destination: com.sngular.kloadgen.bank.account.updated
+          content-type: application/*+avro
+          producer:
+           useNativeEncoding: true
+      kafka:
+        binder:
+          defaultBrokerPort: 29092
+          producer-properties:
+            key.serializer: org.apache.kafka.common.serialization.StringSerializer
+            value.serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+            auto.register.schemas: false
+            use.latest.version: true
+          consumer-properties:
+            key.deserializer: org.apache.kafka.common.serialization.StringDeserializer
+            value.deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+            specific.avro.reader: true
+            auto.register.schemas: false
+            use.latest.version: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus

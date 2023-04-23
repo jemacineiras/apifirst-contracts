@@ -1,0 +1,39 @@
+version: "3.3"
+
+services:
+  grafana:
+    user: "<userid>:<groupid>"
+
+  dnsmasq:
+    image: andyshinn/dnsmasq
+    cap_add:
+    - NET_ADMIN
+    restart: always
+    ports:
+    - "<localip>:53:53/udp"
+    - "<localip>:53:53/tcp"
+    volumes:
+    - ./configuration/dnsmasq/dnsmasq.conf:/etc/dnsmasq.conf
+    command: --log-facility=-
+
+  traefik:
+    image: "traefik:v2.2"
+    container_name: "traefik"
+    restart: always
+    command:
+    - "--log.level=ERROR"
+    - "--api.insecure=true"
+    - "--providers.docker=true"
+    - "--providers.docker.exposedbydefault=false"
+    - "--entrypoints.web.address=:80"
+    ports:
+    - "80:80"
+    - "8080:8080"
+    volumes:
+    - "/var/run/docker.sock:/var/run/docker.sock:ro"
+    - "./configuration/traefik/traefik.yml:/etc/traefik/traefik.yml"
+
+networks:
+  defaults:
+    name: synth-net
+    external: true

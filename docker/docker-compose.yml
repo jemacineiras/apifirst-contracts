@@ -1,0 +1,176 @@
+version: '2.2'
+services:
+
+  bankdemo:
+    image: demo:1.0.0
+    container_name: bank-demo.test
+    depends_on:
+      - kafka
+      - mongo
+      - schema-registry
+    ports:
+      - 8180:8080
+    expose:
+      - 8180
+    environment:
+      - logging.level.root=INFO
+      - spring.profiles.active=standalone
+      - spring.data.mongodb.host=mongo
+      - spring.data.mongodb.username=kloadgen
+      - spring.data.mongodb.password=kloadgen
+      - spring.cloud.stream.kafka.binder.brokers=kafka.test
+      - spring.cloud.stream.kafka.binder.producer-properties.schema.registry.url=http://schema-registry:8081
+      - spring.cloud.stream.kafka.binder.consumer-properties.schema.registry.url=http://schema-registry:8081
+      - spring.cloud.stream.stream.schema-registry-client=http://schema-registry:8081
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.5.2
+    container_name: es01.test
+    environment:
+      - node.name=es01
+      - discovery.type=single-node
+    volumes:
+      - data01:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+      - 9300:9300
+
+  grafana:
+    image: "grafana/grafana"
+    container_name: grafana01.test
+    ports:
+     - "3000:3000"
+    environment:
+      GF_PATHS_DATA : /var/lib/grafana
+      GF_SECURITY_ADMIN_PASSWORD : kafka
+      GF_SERVER_PROTOCOL: http
+    volumes:
+     - ./configuration/grafana/provisioning:/etc/grafana/provisioning
+     - ./configuration/grafana/dashboards:/var/lib/grafana/dashboards
+    depends_on:
+     - prometheus
+
+  prometheus:
+    image: "prom/prometheus"
+    container_name: prometheus.test
+    ports:
+     - "9090:9090"
+    volumes:
+     - ./configuration/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    command: "--config.file=/etc/prometheus/prometheus.yml"
+  jmx-kafka101:
+    image: "sscaling/jmx-prometheus-exporter"
+    ports:
+     - "5556:5556"
+    environment:
+     CONFIG_YML : "/etc/jmx_exporter/config.yml"
+    volumes:
+     - ./configuration/jmx_exporter/config_kafka101.yml:/etc/jmx_exporter/config.yml
+    container_name: jmx-kafka101
+    depends_on:
+     - kafka
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    container_name: zookeeper01.test
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - 22181:2181
+    expose:
+    - "22181"
+
+  schema-registry:
+    image: confluentinc/cp-schema-registry
+    container_name: schema-registry.test
+    depends_on:
+    - zookeeper
+    - kafka
+    ports:
+    - 8081:8081
+    expose:
+    - "8081"
+    environment:
+      SCHEMA_REGISTRY_HOST_NAME: schema-registry
+      SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: PLAINTEXT://kafka:9092
+      SCHEMA_REGISTRY_LISTENERS: http://0.0.0.0:8081
+      SCHEMA_REGISTRY_KAFKASTORE_CONNECTION_URL: zookeeper:2181
+    volumes:
+    - ./configuration/schema_registry/install_schemas.sh:/install_schemas.sh
+    command:
+    - "/etc/confluent/docker/run"
+    - "/install_schemas.sh"
+
+  kafka:
+    image: confluentinc/cp-kafka:latest    
+    container_name: kafka.test
+    depends_on:
+      - zookeeper
+    ports:
+      - 29092:29092
+      - 9991:9991
+    expose:
+      - "29092"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_JMX_PORT: 9991
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://kafka.test:29092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+
+  mongodb-exporter:
+    image: docker.io/bitnami/mongodb-exporter:0
+    container_name: mongodb-exporter.test
+    ports:
+      - 9216:9216
+    expose:
+      - "9216"
+    environment:
+      MONGODB_URI: mongodb://kloadgen:kloadgen@mongo:27017/admin
+
+  mongo:
+    image: mongo:latest
+    container_name: mongodb.test
+    restart: always
+    ports:
+      - "27017:27017"
+    expose:
+      - "27027"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: kloadgen
+      MONGO_INITDB_ROOT_PASSWORD: kloadgen
+      MONGO_INITDB_DATABASE: bank-demo
+    volumes:
+      - ./configuration/mongo/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+
+  mongoexpress:
+    image: mongo-express:latest
+    container_name: mongo-express.test
+    depends_on:
+      - mongo
+    environment:
+      ME_CONFIG_MONGODB_SERVER: mongo
+      ME_CONFIG_MONGODB_ADMINUSERNAME: kloadgen
+      ME_CONFIG_MONGODB_ADMINPASSWORD: kloadgen
+      ME_CONFIG_BASICAUTH_USERNAME: 'kloadgen'
+      ME_CONFIG_BASICAUTH_PASSWORD: 'kloadgen'
+    ports:
+      - "8090:8081"
+
+volumes:
+  data01:
+    driver: local
+  mongo:
+    driver: local
+  mongodb:
+    driver: local
+
+networks:
+  defaults:
+    name: synth-net
+    external: true
