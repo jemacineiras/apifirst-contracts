@@ -1,7 +1,7 @@
 {
   "type": "record",
   "name": "BankMovementEvent",
-  "namespace": "com.sngular.event.performance.model",
+  "namespace": "com.sngular.kloadgen.demo",
   "doc": "Container for the banking movement.",
    "fields": [
     {

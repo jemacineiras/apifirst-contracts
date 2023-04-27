@@ -2,6 +2,8 @@ logging:
   level:
     root: info
 spring:
+  profiles:
+    active: localhost
   application:
     name: bankdemo
   data:
@@ -14,11 +16,11 @@ spring:
     schema:
       avro:
         dynamicSchemaGenerationEnabled: true
+    default:
+      contentType: application/*+avro
+    function:
+      definition: processData;accountEmitter;storeMovement;storeAccount
     stream:
-      default:
-        contentType: application/*+avro
-      function:
-        definition: processData;accountEmitter;storeMovement;storeAccount
       bindings:
         storeMovement-in-0:
           destination: com.sngular.kloadgen.bank.movement

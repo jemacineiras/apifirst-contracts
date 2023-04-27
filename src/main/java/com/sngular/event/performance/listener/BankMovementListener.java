@@ -1,7 +1,7 @@
 package com.sngular.event.performance.listener;
 
 import com.sngular.event.performance.listener.mapper.BankMovementEventMapper;
-import com.sngular.event.performance.model.BankMovementEvent;
+import com.sngular.kloadgen.demo.BankMovementEvent;
 import com.sngular.event.performance.service.BankProcessService;
 import io.micrometer.core.instrument.Counter;
 import io.micrometer.core.instrument.MeterRegistry;

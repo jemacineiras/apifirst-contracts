@@ -2,7 +2,7 @@ server:
   port: 8180
 logging:
   level:
-    root: debug
+    root: INFO
 spring:
   config:
     activate:
@@ -27,7 +27,7 @@ spring:
             schema.registry.url: http://localhost:8081
       schema:
         avro:
-          subjectNamingStrategy: strategy.com.sngular.performance.RecordSubjectNameStrategy
+          subjectNamingStrategy: io.confluent.kafka.serializers.subject.TopicNameStrategy
 management:
   endpoints:
     web:

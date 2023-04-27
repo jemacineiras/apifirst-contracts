@@ -228,12 +228,12 @@
                   <consumer>
                     <ids>storeMovement,storeAccount</ids>
                     <apiPackage>com.sngular.event.performance.listener</apiPackage>
-                    <modelPackage>com.sngular.event.performance.model</modelPackage>
+                    <modelPackage>com.sngular.kloadgen.demo</modelPackage>
                   </consumer>
                   <supplier>
                     <ids>accountEmitter</ids>
                     <apiPackage>com.sngular.event.performance.emitter</apiPackage>
-                    <modelPackage>com.sngular.event.performance.model</modelPackage>
+                    <modelPackage>com.sngular.kloadgen.demo</modelPackage>
                   </supplier>
                 </specFile>
               </specFiles>

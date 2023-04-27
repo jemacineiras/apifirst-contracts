@@ -4,8 +4,8 @@ import java.util.function.Function;
 
 import com.sngular.event.performance.listener.mapper.BankAccountEventMapper;
 import com.sngular.event.performance.listener.mapper.BankMovementEventMapper;
-import com.sngular.event.performance.model.BankAccountEvent;
-import com.sngular.event.performance.model.BankMovementEvent;
+import com.sngular.kloadgen.demo.BankAccountEvent;
+import com.sngular.kloadgen.demo.BankMovementEvent;
 import com.sngular.event.performance.service.BankProcessService;
 import io.micrometer.core.annotation.Timed;
 import lombok.RequiredArgsConstructor;

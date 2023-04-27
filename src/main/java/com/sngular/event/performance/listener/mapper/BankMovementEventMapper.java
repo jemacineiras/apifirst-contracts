@@ -5,7 +5,7 @@ import java.math.BigInteger;
 import java.nio.ByteBuffer;
 
 import com.sngular.event.performance.model.BankMovementEntity;
-import com.sngular.event.performance.model.BankMovementEvent;
+import com.sngular.kloadgen.demo.BankMovementEvent;
 import org.mapstruct.Mapper;
 
 @Mapper

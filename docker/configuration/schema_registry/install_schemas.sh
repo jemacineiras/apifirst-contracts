@@ -1,13 +1,13 @@
 #!/bin/sh
 
-curl --location --request POST 'http://localhost:8081/subjects/com.sngular.kloadgen.demo.BankMovementEvent/versions' \
+curl --location --request POST 'http://localhost:8081/subjects/com.sngular.kloadgen.bank.movement-value/versions' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "schema": "{\"type\":\"record\",\"name\":\"BankMovementEvent\",\"namespace\":\"com.sngular.kloadgen.demo\",\"doc\":\"Container for the banking movement.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\",\"doc\":\"Movement Id\"},{\"name\":\"accountNumber\",\"type\":\"string\",\"doc\":\"Movement account Number\"},{\"name\":\"movement\",\"type\":{\"type\":\"enum\",\"name\":\"MovementType\",\"symbols\":[\"DEPOSIT\",\"WITHDRAW\"],\"doc\":\"Movement Type\"}},{\"name\":\"amount\",\"type\":\"float\",\"doc\":\"Movement amount\"},{\"name\":\"movementDate\",\"type\":{\"type\":\"long\",\"logicalType\":\"local-timestamp-millis\"},\"doc\":\"Movement Date Time when was produced\"},{\"name\":\"appliedDate\",\"type\":{\"type\":\"long\",\"logicalType\":\"local-timestamp-millis\"},\"doc\":\"Movement Date Time when was applied by the system\"}]}",
     "schemaType": "AVRO"
 }'
 
-curl --location --request POST 'http://localhost:8081/subjects/com.sngular.kloadgen.demo.BankAccountEvent/versions' \
+curl --location --request POST 'http://localhost:8081/subjects/com.sngular.kloadgen.bank.account-value/versions' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "schema": "{\"type\":\"record\",\"name\":\"BankAccountEvent\",\"namespace\":\"com.sngular.kloadgen.demo\",\"doc\":\"Container for the banking movement.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\",\"doc\":\"Account Id\"},{\"name\":\"name\",\"type\":\"string\",\"doc\":\"Account name\"},{\"name\":\"accountNumber\",\"type\":\"string\",\"doc\":\"Movement account Number\"},{\"name\":\"amount\",\"type\":\"float\",\"doc\":\"Movement amount\"},{\"name\":\"lastUpdateDate\",\"type\":{\"type\":\"long\",\"logicalType\":\"local-timestamp-millis\"},\"doc\":\"Last Account Update Date Time\"},{\"name\":\"creationDate\",\"type\":{\"type\":\"long\",\"logicalType\":\"local-timestamp-millis\"},\"doc\":\"Account Creation Date Time\"}]}",

@@ -7,7 +7,7 @@ import java.util.stream.Stream;
 
 import com.sngular.event.performance.model.BankAccountEntity;
 import com.sngular.event.performance.model.BankMovementEntity;
-import com.sngular.event.performance.model.MovementType;
+import com.sngular.kloadgen.demo.MovementType;
 import com.sngular.event.performance.repository.BankAccountRepository;
 import com.sngular.event.performance.repository.BankMovementRepository;
 import io.micrometer.core.instrument.Counter;
