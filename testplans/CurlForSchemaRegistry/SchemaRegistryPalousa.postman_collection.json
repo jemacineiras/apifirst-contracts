@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "http://localhost:8081/subjects/com.sngular.kloadgen.demo.BankAccountEvent/versions",
+			"name": "http://localhost:8081/subjects/net.coru.kloadgen.demo.BankAccountEvent/versions",
 			"protocolProfileBehavior": {
 				"disabledSystemHeaders": {}
 			},
@@ -16,7 +16,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"schema\": \"{\\\"type\\\":\\\"record\\\",\\\"name\\\":\\\"BankAccountEvent\\\",\\\"namespace\\\":\\\"com.sngular.kloadgen.demo\\\",\\\"doc\\\":\\\"Container for the banking movement.\\\",\\\"fields\\\":[{\\\"name\\\":\\\"id\\\",\\\"type\\\":\\\"string\\\",\\\"doc\\\":\\\"Account Id\\\"},{\\\"name\\\":\\\"name\\\",\\\"type\\\":\\\"string\\\",\\\"doc\\\":\\\"Account name\\\"},{\\\"name\\\":\\\"accountNumber\\\",\\\"type\\\":\\\"string\\\",\\\"doc\\\":\\\"Movement account Number\\\"},{\\\"name\\\":\\\"amount\\\",\\\"type\\\":\\\"float\\\",\\\"doc\\\":\\\"Movement amount\\\"},{\\\"name\\\":\\\"lastUpdateDate\\\",\\\"type\\\":{\\\"type\\\":\\\"long\\\",\\\"logicalType\\\":\\\"local-timestamp-millis\\\"},\\\"doc\\\":\\\"Last Account Update Date Time\\\"},{\\\"name\\\":\\\"creationDate\\\",\\\"type\\\":{\\\"type\\\":\\\"long\\\",\\\"logicalType\\\":\\\"local-timestamp-millis\\\"},\\\"doc\\\":\\\"Account Creation Date Time\\\"}]}\",\r\n    \"schemaType\": \"AVRO\"\r\n}",
+					"raw": "{\r\n    \"schema\": \"{\\\"type\\\":\\\"record\\\",\\\"name\\\":\\\"BankAccountEvent\\\",\\\"namespace\\\":\\\"net.coru.kloadgen.demo\\\",\\\"doc\\\":\\\"Container for the banking movement.\\\",\\\"fields\\\":[{\\\"name\\\":\\\"id\\\",\\\"type\\\":\\\"string\\\",\\\"doc\\\":\\\"Account Id\\\"},{\\\"name\\\":\\\"name\\\",\\\"type\\\":\\\"string\\\",\\\"doc\\\":\\\"Account name\\\"},{\\\"name\\\":\\\"accountNumber\\\",\\\"type\\\":\\\"string\\\",\\\"doc\\\":\\\"Movement account Number\\\"},{\\\"name\\\":\\\"amount\\\",\\\"type\\\":\\\"float\\\",\\\"doc\\\":\\\"Movement amount\\\"},{\\\"name\\\":\\\"lastUpdateDate\\\",\\\"type\\\":{\\\"type\\\":\\\"long\\\",\\\"logicalType\\\":\\\"local-timestamp-millis\\\"},\\\"doc\\\":\\\"Last Account Update Date Time\\\"},{\\\"name\\\":\\\"creationDate\\\",\\\"type\\\":{\\\"type\\\":\\\"long\\\",\\\"logicalType\\\":\\\"local-timestamp-millis\\\"},\\\"doc\\\":\\\"Account Creation Date Time\\\"}]}\",\r\n    \"schemaType\": \"AVRO\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -24,7 +24,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8081/subjects/com.sngular.kloadgen.demo.BankAccountEvent/versions",
+					"raw": "http://localhost:8081/subjects/net.coru.kloadgen.demo.BankAccountEvent/versions",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -32,7 +32,7 @@
 					"port": "8081",
 					"path": [
 						"subjects",
-						"com.sngular.kloadgen.demo.BankAccountEvent",
+						"net.coru.kloadgen.demo.BankAccountEvent",
 						"versions"
 					]
 				}
@@ -40,7 +40,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8081/subjects/com.sngular.kloadgen.demo.BankMovementEvent/versions",
+			"name": "http://localhost:8081/subjects/net.coru.kloadgen.demo.BankMovementEvent/versions",
 			"protocolProfileBehavior": {
 				"disabledSystemHeaders": {}
 			},
@@ -49,7 +49,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"schema\": \"{\\\"type\\\":\\\"record\\\",\\\"name\\\":\\\"BankAccountEvent\\\",\\\"namespace\\\":\\\"com.sngular.kloadgen.demo\\\",\\\"doc\\\":\\\"Container for the banking movement.\\\",\\\"fields\\\":[{\\\"name\\\":\\\"id\\\",\\\"type\\\":\\\"string\\\",\\\"doc\\\":\\\"Account Id\\\"},{\\\"name\\\":\\\"name\\\",\\\"type\\\":\\\"string\\\",\\\"doc\\\":\\\"Account name\\\"},{\\\"name\\\":\\\"accountNumber\\\",\\\"type\\\":\\\"string\\\",\\\"doc\\\":\\\"Movement account Number\\\"},{\\\"name\\\":\\\"amount\\\",\\\"type\\\":\\\"float\\\",\\\"doc\\\":\\\"Movement amount\\\"},{\\\"name\\\":\\\"lastUpdateDate\\\",\\\"type\\\":{\\\"type\\\":\\\"long\\\",\\\"logicalType\\\":\\\"local-timestamp-millis\\\"},\\\"doc\\\":\\\"Last Account Update Date Time\\\"},{\\\"name\\\":\\\"creationDate\\\",\\\"type\\\":{\\\"type\\\":\\\"long\\\",\\\"logicalType\\\":\\\"local-timestamp-millis\\\"},\\\"doc\\\":\\\"Account Creation Date Time\\\"}]}\",\r\n    \"schemaType\": \"AVRO\"\r\n}",
+					"raw": "{\r\n    \"schema\": \"{\\\"type\\\":\\\"record\\\",\\\"name\\\":\\\"BankAccountEvent\\\",\\\"namespace\\\":\\\"net.coru.kloadgen.demo\\\",\\\"doc\\\":\\\"Container for the banking movement.\\\",\\\"fields\\\":[{\\\"name\\\":\\\"id\\\",\\\"type\\\":\\\"string\\\",\\\"doc\\\":\\\"Account Id\\\"},{\\\"name\\\":\\\"name\\\",\\\"type\\\":\\\"string\\\",\\\"doc\\\":\\\"Account name\\\"},{\\\"name\\\":\\\"accountNumber\\\",\\\"type\\\":\\\"string\\\",\\\"doc\\\":\\\"Movement account Number\\\"},{\\\"name\\\":\\\"amount\\\",\\\"type\\\":\\\"float\\\",\\\"doc\\\":\\\"Movement amount\\\"},{\\\"name\\\":\\\"lastUpdateDate\\\",\\\"type\\\":{\\\"type\\\":\\\"long\\\",\\\"logicalType\\\":\\\"local-timestamp-millis\\\"},\\\"doc\\\":\\\"Last Account Update Date Time\\\"},{\\\"name\\\":\\\"creationDate\\\",\\\"type\\\":{\\\"type\\\":\\\"long\\\",\\\"logicalType\\\":\\\"local-timestamp-millis\\\"},\\\"doc\\\":\\\"Account Creation Date Time\\\"}]}\",\r\n    \"schemaType\": \"AVRO\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -57,7 +57,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8081/subjects/com.sngular.kloadgen.demo.BankMovementEvent/versions",
+					"raw": "http://localhost:8081/subjects/net.coru.kloadgen.demo.BankMovementEvent/versions",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -65,7 +65,7 @@
 					"port": "8081",
 					"path": [
 						"subjects",
-						"com.sngular.kloadgen.demo.BankMovementEvent",
+						"net.coru.kloadgen.demo.BankMovementEvent",
 						"versions"
 					]
 				}

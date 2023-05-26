@@ -2,8 +2,6 @@ logging:
   level:
     root: info
 spring:
-  profiles:
-    active: localhost
   application:
     name: bankdemo
   data:
@@ -11,48 +9,47 @@ spring:
       port: 27017
       username: kloadgen
       password: kloadgen
-      database: bank-demo
+      database: bank-bankserver
   cloud:
     schema:
       avro:
         dynamicSchemaGenerationEnabled: true
-    default:
-      contentType: application/*+avro
-    function:
-      definition: processData;accountEmitter;storeMovement;storeAccount
     stream:
+      default:
+        contentType: application/json
+      function:
+        definition: processData;accountEmitter;storeMovement;storeAccount
       bindings:
         storeMovement-in-0:
-          destination: com.sngular.kloadgen.bank.movement
+          destination: com.sngular.event.contracts.bank.movement
           group: storeMovementGroup
-          content-type: application/*+avro
+          content-type: application/json
           consumer:
             useNativeEncoding: true
         storeAccount-in-0:
-          destination: com.sngular.kloadgen.bank.account
+          destination: com.sngular.event.contracts.bank.account
           group: storeAccountGroup
-          content-type: application/*+avro
+          content-type: application/json
           consumer:
             useNativeEncoding: true
         accountEmitter-out-0:
-          destination: com.sngular.kloadgen.bank.account.refresh
-          content-type: application/*+avro
+          destination: com.sngular.event.contracts.bank.account.refresh
+          content-type: application/json
           producer:
             useNativeEncoding: true
         processData-in-0:
-          destination: com.sngular.kloadgen.bank.movement
+          destination: com.sngular.event.contracts.bank.movement
           group: processDataGroup
-          content-type: application/*+avro
+          content-type: application/json
           consumer:
             useNativeEncoding: true
         processData-out-0:
-          destination: com.sngular.kloadgen.bank.account.updated
-          content-type: application/*+avro
+          destination: com.sngular.event.contracts.bank.account.updated
+          content-type: application/json
           producer:
            useNativeEncoding: true
       kafka:
         binder:
-          defaultBrokerPort: 29092
           producer-properties:
             key.serializer: org.apache.kafka.common.serialization.StringSerializer
             value.serializer: io.confluent.kafka.serializers.KafkaAvroSerializer

@@ -1,8 +1,21 @@
-db.auth('kloadgen', 'kloadgen')
+let dbAdmin = db.getSiblingDB("admin");
+dbAdmin.createUser({
+  user: "kloadgen",
+  pwd: "kloadgen",
+  roles: [{ role: "userAdminAnyDatabase", db: "admin" }],
+  mechanisms: ["SCRAM-SHA-1"],
+});
 
-db = db.getSiblingDB('bank-demo')
+// Authenticate user
+dbAdmin.auth({
+  user: "kloadgen",
+  pwd: "kloadgen",
+  mechanisms: ["SCRAM-SHA-1"],
+  digestPassword: true,
+});
 
-db.createUser({
+let dbDemo = db.getSiblingDB("bank-demo");
+dbDemo.createUser({
   user: "kloadgen",
   pwd: "kloadgen",
   roles: [{ role: "readWrite", db: "bank-demo" }],

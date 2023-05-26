@@ -13,16 +13,17 @@ spring:
       port: 27017
       username: kloadgen
       password: kloadgen
-      database: bank-demo
+      database: bank-bankserver
   cloud:
     stream:
       schema-registry-client:
         endpoint: http://schema-registry.test:2181
       kafka:
         binder:
+          defaultBrokerPort: 29092
           configuration:
             application:
-              id: bank-demo
+              id: bank-bankserver
             value:
               subject:
                 name:

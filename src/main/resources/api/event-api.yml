@@ -25,16 +25,16 @@ channels:
       operationId: "accountEmitter"
       message:
         payload:
-          $ref: 'schema/bank_account.avsc'
+          $ref: 'schema/bank_account.yml#/BankAccountEvent'
   storeMovement:
     subscribe:
       operationId: "storeMovement"
       message:
         payload:
-          $ref: 'schema/bank_movement.avsc'
+          $ref: 'schema/bank_movement.yml#/BankMovementEvent'
   storeAccount:
     subscribe:
       operationId: "storeAccount"
       message:
         payload:
-          $ref: 'schema/bank_account.avsc'
+          $ref: 'schema/bank_account.yml#/BankAccountEvent'

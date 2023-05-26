@@ -2,8 +2,8 @@ version: '2.2'
 services:
 
   bankdemo:
-    image: demo:1.0.0
-    container_name: bank-demo.test
+    image: bank-server:1.0.0
+    container_name: bank-server.test
     depends_on:
       - kafka
       - mongo
@@ -15,7 +15,7 @@ services:
     environment:
       - logging.level.root=INFO
       - spring.profiles.active=standalone
-      - spring.data.mongodb.host=mongo
+      - spring.data.mongodb.host=mongodb.test
       - spring.data.mongodb.username=kloadgen
       - spring.data.mongodb.password=kloadgen
       - spring.cloud.stream.kafka.binder.brokers=kafka.test
@@ -95,7 +95,7 @@ services:
       SCHEMA_REGISTRY_HOST_NAME: schema-registry
       SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: PLAINTEXT://kafka:9092
       SCHEMA_REGISTRY_LISTENERS: http://0.0.0.0:8081
-      SCHEMA_REGISTRY_KAFKASTORE_CONNECTION_URL: zookeeper:2181
+      SCHEMA_REGISTRY_KAFKASTORE_CONNECTION_URL: zookeeper01.test:2181
     volumes:
     - ./configuration/schema_registry/install_schemas.sh:/install_schemas.sh
     command:
@@ -115,7 +115,7 @@ services:
     environment:
       KAFKA_BROKER_ID: 1
       KAFKA_JMX_PORT: 9991
-      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper01.test:2181
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://kafka.test:29092
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
@@ -134,7 +134,7 @@ services:
       MONGODB_URI: mongodb://kloadgen:kloadgen@mongo:27017/admin
 
   mongo:
-    image: mongo:latest
+    image: mongo:5.0
     container_name: mongodb.test
     restart: always
     ports:
@@ -144,9 +144,10 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: kloadgen
       MONGO_INITDB_ROOT_PASSWORD: kloadgen
-      MONGO_INITDB_DATABASE: bank-demo
     volumes:
       - ./configuration/mongo/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+      - mongo:/var/lib/mongo
+      - mongodb:/data/db
 
   mongoexpress:
     image: mongo-express:latest

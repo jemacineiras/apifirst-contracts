@@ -71,18 +71,18 @@
           <stringProp name="filename"></stringProp>
         </ResultCollector>
         <hashTree/>
-        <com.sngular.kloadgen.config.keysimple.KeySimpleConfigElement guiclass="TestBeanGUI" testclass="com.sngular.kloadgen.config.keysimple.KeySimpleConfigElement" testname="KLG - Key Plain Load Generator Config" enabled="true">
+        <net.coru.kloadgen.config.keysimple.KeySimpleConfigElement guiclass="TestBeanGUI" testclass="net.coru.kloadgen.config.keysimple.KeySimpleConfigElement" testname="KLG - Key Plain Load Generator Config" enabled="true">
           <stringProp name="keyValue"></stringProp>
           <stringProp name="keyType">string</stringProp>
           <stringProp name="keySerializerConfiguration">org.apache.kafka.common.serialization.StringSerializer</stringProp>
-        </com.sngular.kloadgen.config.keysimple.KeySimpleConfigElement>
+        </net.coru.kloadgen.config.keysimple.KeySimpleConfigElement>
         <hashTree/>
-        <com.sngular.kloadgen.config.valueserialized.ValueSerializedConfigElement guiclass="TestBeanGUI" testclass="com.sngular.kloadgen.config.valueserialized.ValueSerializedConfigElement" testname="KLG - Value Schema Load Generator Config" enabled="true">
+        <net.coru.kloadgen.config.valueserialized.ValueSerializedConfigElement guiclass="TestBeanGUI" testclass="net.coru.kloadgen.config.valueserialized.ValueSerializedConfigElement" testname="KLG - Value Schema Load Generator Config" enabled="true">
           <stringProp name="valueNameStrategy">io.confluent.kafka.serializers.subject.TopicNameStrategy</stringProp>
           <stringProp name="valueSerializerConfiguration">io.confluent.kafka.serializers.KafkaAvroSerializer</stringProp>
-          <stringProp name="valueSubjectName">com.sngular.kloadgen.demo.BankAccountEvent</stringProp>
+          <stringProp name="valueSubjectName">com.sngular.event.contracts.bankserver.BankAccountEvent</stringProp>
           <collectionProp name="valueSchemaProperties">
-            <elementProp name="" elementType="com.sngular.kloadgen.model.FieldValueMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.FieldValueMapping">
               <stringProp name="fieldName">id</stringProp>
               <intProp name="valueLength">0</intProp>
               <stringProp name="fieldType">string</stringProp>
@@ -90,7 +90,7 @@
               <boolProp name="required">true</boolProp>
               <boolProp name="ancestorRequired">true</boolProp>
             </elementProp>
-            <elementProp name="" elementType="com.sngular.kloadgen.model.FieldValueMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.FieldValueMapping">
               <stringProp name="fieldName">name</stringProp>
               <intProp name="valueLength">0</intProp>
               <stringProp name="fieldType">string</stringProp>
@@ -98,7 +98,7 @@
               <boolProp name="required">true</boolProp>
               <boolProp name="ancestorRequired">true</boolProp>
             </elementProp>
-            <elementProp name="" elementType="com.sngular.kloadgen.model.FieldValueMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.FieldValueMapping">
               <stringProp name="fieldName">accountNumber</stringProp>
               <intProp name="valueLength">0</intProp>
               <stringProp name="fieldType">string</stringProp>
@@ -106,7 +106,7 @@
               <boolProp name="required">true</boolProp>
               <boolProp name="ancestorRequired">true</boolProp>
             </elementProp>
-            <elementProp name="" elementType="com.sngular.kloadgen.model.FieldValueMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.FieldValueMapping">
               <stringProp name="fieldName">amount</stringProp>
               <intProp name="valueLength">0</intProp>
               <stringProp name="fieldType">float</stringProp>
@@ -114,7 +114,7 @@
               <boolProp name="required">true</boolProp>
               <boolProp name="ancestorRequired">true</boolProp>
             </elementProp>
-            <elementProp name="" elementType="com.sngular.kloadgen.model.FieldValueMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.FieldValueMapping">
               <stringProp name="fieldName">lastUpdateDate</stringProp>
               <intProp name="valueLength">0</intProp>
               <stringProp name="fieldType">long_local-timestamp-millis</stringProp>
@@ -122,7 +122,7 @@
               <boolProp name="required">true</boolProp>
               <boolProp name="ancestorRequired">true</boolProp>
             </elementProp>
-            <elementProp name="" elementType="com.sngular.kloadgen.model.FieldValueMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.FieldValueMapping">
               <stringProp name="fieldName">creationDate</stringProp>
               <intProp name="valueLength">0</intProp>
               <stringProp name="fieldType">long_local-timestamp-millis</stringProp>
@@ -132,36 +132,36 @@
             </elementProp>
           </collectionProp>
           <stringProp name="valueSchemaType">AVRO</stringProp>
-        </com.sngular.kloadgen.config.valueserialized.ValueSerializedConfigElement>
+        </net.coru.kloadgen.config.valueserialized.ValueSerializedConfigElement>
         <hashTree/>
-        <com.sngular.kloadgen.config.kafkaheaders.KafkaHeadersConfigElement guiclass="TestBeanGUI" testclass="com.sngular.kloadgen.config.kafkaheaders.KafkaHeadersConfigElement" testname="KLG - Kafka Headers Config Element" enabled="true">
+        <net.coru.kloadgen.config.kafkaheaders.KafkaHeadersConfigElement guiclass="TestBeanGUI" testclass="net.coru.kloadgen.config.kafkaheaders.KafkaHeadersConfigElement" testname="KLG - Kafka Headers Config Element" enabled="true">
           <collectionProp name="kafkaHeaders">
-            <elementProp name="" elementType="com.sngular.kloadgen.model.HeaderMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.HeaderMapping">
               <stringProp name="headerName">message_id</stringProp>
               <stringProp name="headerValue">uuid</stringProp>
             </elementProp>
-            <elementProp name="" elementType="com.sngular.kloadgen.model.HeaderMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.HeaderMapping">
               <stringProp name="headerName">publication_timestamp</stringProp>
               <stringProp name="headerValue">stringTimestamp</stringProp>
             </elementProp>
-            <elementProp name="" elementType="com.sngular.kloadgen.model.HeaderMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.HeaderMapping">
               <stringProp name="headerName">producer_id</stringProp>
               <stringProp name="headerValue">producer_id_1</stringProp>
             </elementProp>
-            <elementProp name="" elementType="com.sngular.kloadgen.model.HeaderMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.HeaderMapping">
               <stringProp name="headerName">topic</stringProp>
-              <stringProp name="headerValue">com.sngular.kloadgen.bank.account</stringProp>
+              <stringProp name="headerValue">net.coru.kloadgen.bank.account</stringProp>
             </elementProp>
-            <elementProp name="" elementType="com.sngular.kloadgen.model.HeaderMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.HeaderMapping">
               <stringProp name="headerName">envelope_id</stringProp>
               <stringProp name="headerValue">envelope-id</stringProp>
             </elementProp>
-            <elementProp name="" elementType="com.sngular.kloadgen.model.HeaderMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.HeaderMapping">
               <stringProp name="headerName">contentType</stringProp>
               <stringProp name="headerValue">application/*+avro</stringProp>
             </elementProp>
           </collectionProp>
-        </com.sngular.kloadgen.config.kafkaheaders.KafkaHeadersConfigElement>
+        </net.coru.kloadgen.config.kafkaheaders.KafkaHeadersConfigElement>
         <hashTree/>
         <JavaConfig guiclass="JavaConfigGui" testclass="JavaConfig" testname="Kafka Producer Properties" enabled="true">
           <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
@@ -178,7 +178,7 @@
               </elementProp>
               <elementProp name="kafka.topic.name" elementType="Argument">
                 <stringProp name="Argument.name">kafka.topic.name</stringProp>
-                <stringProp name="Argument.value">com.sngular.kloadgen.bank.account</stringProp>
+                <stringProp name="Argument.value">net.coru.kloadgen.bank.account</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
               <elementProp name="compression.type" elementType="Argument">
@@ -328,34 +328,34 @@
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="classname">com.sngular.kloadgen.sampler.KafkaSchemaSampler</stringProp>
+          <stringProp name="classname">net.coru.kloadgen.sampler.KafkaSchemaSampler</stringProp>
         </JavaConfig>
         <hashTree/>
-        <com.sngular.kloadgen.config.schemaregistry.SchemaRegistryConfigElement guiclass="TestBeanGUI" testclass="com.sngular.kloadgen.config.schemaregistry.SchemaRegistryConfigElement" testname="Schema Registry Config Element" enabled="true">
+        <net.coru.kloadgen.config.schemaregistry.SchemaRegistryConfigElement guiclass="TestBeanGUI" testclass="net.coru.kloadgen.config.schemaregistry.SchemaRegistryConfigElement" testname="Schema Registry Config Element" enabled="true">
           <stringProp name="schemaRegistryUrl">http://localhost:8081</stringProp>
           <collectionProp name="schemaRegistryProperties">
-            <elementProp name="Config properties" elementType="com.sngular.kloadgen.model.PropertyMapping" testname="Config properties">
+            <elementProp name="Config properties" elementType="net.coru.kloadgen.model.PropertyMapping" testname="Config properties">
               <stringProp name="propertyName">schema.registry.auth.enabled</stringProp>
               <stringProp name="propertyValue">NO</stringProp>
             </elementProp>
-            <elementProp name="Config properties" elementType="com.sngular.kloadgen.model.PropertyMapping" testname="Config properties">
+            <elementProp name="Config properties" elementType="net.coru.kloadgen.model.PropertyMapping" testname="Config properties">
               <stringProp name="propertyName">schema.registry.auth.method</stringProp>
               <stringProp name="propertyValue">BASIC</stringProp>
             </elementProp>
-            <elementProp name="Config properties" elementType="com.sngular.kloadgen.model.PropertyMapping" testname="Config properties">
+            <elementProp name="Config properties" elementType="net.coru.kloadgen.model.PropertyMapping" testname="Config properties">
               <stringProp name="propertyName">schema.registry.username</stringProp>
               <stringProp name="propertyValue">&lt;username&gt;</stringProp>
             </elementProp>
-            <elementProp name="Config properties" elementType="com.sngular.kloadgen.model.PropertyMapping" testname="Config properties">
+            <elementProp name="Config properties" elementType="net.coru.kloadgen.model.PropertyMapping" testname="Config properties">
               <stringProp name="propertyName">schema.registry.password</stringProp>
               <stringProp name="propertyValue">&lt;password&gt;</stringProp>
             </elementProp>
-            <elementProp name="Config properties" elementType="com.sngular.kloadgen.model.PropertyMapping" testname="Config properties">
+            <elementProp name="Config properties" elementType="net.coru.kloadgen.model.PropertyMapping" testname="Config properties">
               <stringProp name="propertyName">schema.registry.bearer</stringProp>
               <stringProp name="propertyValue">&lt;bearer&gt;</stringProp>
             </elementProp>
           </collectionProp>
-        </com.sngular.kloadgen.config.schemaregistry.SchemaRegistryConfigElement>
+        </net.coru.kloadgen.config.schemaregistry.SchemaRegistryConfigElement>
         <hashTree/>
       </hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="BankAccountConsumerSchemaRegistry" enabled="false">
@@ -387,7 +387,7 @@
               </elementProp>
               <elementProp name="kafka.topic.name" elementType="Argument">
                 <stringProp name="Argument.name">kafka.topic.name</stringProp>
-                <stringProp name="Argument.value">com.sngular.kloadgen.bank.account</stringProp>
+                <stringProp name="Argument.value">net.coru.kloadgen.bank.account</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
               <elementProp name="send.buffer.bytes" elementType="Argument">
@@ -542,7 +542,7 @@
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="classname">com.sngular.kloadgen.sampler.KafkaConsumerSampler</stringProp>
+          <stringProp name="classname">net.coru.kloadgen.sampler.KafkaConsumerSampler</stringProp>
         </JavaSampler>
         <hashTree/>
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
@@ -582,37 +582,37 @@
           <stringProp name="filename"></stringProp>
         </ResultCollector>
         <hashTree/>
-        <com.sngular.kloadgen.config.valuedeserialized.ValueDeserializedConfigElement guiclass="TestBeanGUI" testclass="com.sngular.kloadgen.config.valuedeserialized.ValueDeserializedConfigElement" testname="Value Schema Deserialization Configuration" enabled="true">
+        <net.coru.kloadgen.config.valuedeserialized.ValueDeserializedConfigElement guiclass="TestBeanGUI" testclass="net.coru.kloadgen.config.valuedeserialized.ValueDeserializedConfigElement" testname="Value Schema Deserialization Configuration" enabled="true">
           <stringProp name="valueDeSerializerConfiguration">io.confluent.kafka.serializers.KafkaAvroDeserializer</stringProp>
           <stringProp name="valueNameStrategy">io.confluent.kafka.serializers.subject.TopicNameStrategy</stringProp>
           <stringProp name="valueSchemaType">&lt;avro subject&gt;</stringProp>
-        </com.sngular.kloadgen.config.valuedeserialized.ValueDeserializedConfigElement>
+        </net.coru.kloadgen.config.valuedeserialized.ValueDeserializedConfigElement>
         <hashTree/>
-        <com.sngular.kloadgen.config.schemaregistry.SchemaRegistryConfigElement guiclass="TestBeanGUI" testclass="com.sngular.kloadgen.config.schemaregistry.SchemaRegistryConfigElement" testname="Schema Registry Config Element" enabled="true">
+        <net.coru.kloadgen.config.schemaregistry.SchemaRegistryConfigElement guiclass="TestBeanGUI" testclass="net.coru.kloadgen.config.schemaregistry.SchemaRegistryConfigElement" testname="Schema Registry Config Element" enabled="true">
           <stringProp name="schemaRegistryUrl">http://localhost:8081</stringProp>
           <collectionProp name="schemaRegistryProperties">
-            <elementProp name="Config properties" elementType="com.sngular.kloadgen.model.PropertyMapping" testname="Config properties">
+            <elementProp name="Config properties" elementType="net.coru.kloadgen.model.PropertyMapping" testname="Config properties">
               <stringProp name="propertyName">schema.registry.auth.enabled</stringProp>
               <stringProp name="propertyValue">NO</stringProp>
             </elementProp>
-            <elementProp name="Config properties" elementType="com.sngular.kloadgen.model.PropertyMapping" testname="Config properties">
+            <elementProp name="Config properties" elementType="net.coru.kloadgen.model.PropertyMapping" testname="Config properties">
               <stringProp name="propertyName">schema.registry.auth.method</stringProp>
               <stringProp name="propertyValue">BASIC</stringProp>
             </elementProp>
-            <elementProp name="Config properties" elementType="com.sngular.kloadgen.model.PropertyMapping" testname="Config properties">
+            <elementProp name="Config properties" elementType="net.coru.kloadgen.model.PropertyMapping" testname="Config properties">
               <stringProp name="propertyName">schema.registry.username</stringProp>
               <stringProp name="propertyValue">&lt;username&gt;</stringProp>
             </elementProp>
-            <elementProp name="Config properties" elementType="com.sngular.kloadgen.model.PropertyMapping" testname="Config properties">
+            <elementProp name="Config properties" elementType="net.coru.kloadgen.model.PropertyMapping" testname="Config properties">
               <stringProp name="propertyName">schema.registry.password</stringProp>
               <stringProp name="propertyValue">&lt;password&gt;</stringProp>
             </elementProp>
-            <elementProp name="Config properties" elementType="com.sngular.kloadgen.model.PropertyMapping" testname="Config properties">
+            <elementProp name="Config properties" elementType="net.coru.kloadgen.model.PropertyMapping" testname="Config properties">
               <stringProp name="propertyName">schema.registry.bearer</stringProp>
               <stringProp name="propertyValue">&lt;bearer&gt;</stringProp>
             </elementProp>
           </collectionProp>
-        </com.sngular.kloadgen.config.schemaregistry.SchemaRegistryConfigElement>
+        </net.coru.kloadgen.config.schemaregistry.SchemaRegistryConfigElement>
         <hashTree/>
       </hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="BankMovementProducerSchemaRegistry" enabled="false">
@@ -629,50 +629,50 @@
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
-        <com.sngular.kloadgen.config.kafkaheaders.KafkaHeadersConfigElement guiclass="TestBeanGUI" testclass="com.sngular.kloadgen.config.kafkaheaders.KafkaHeadersConfigElement" testname="Kafka Headers Config Element" enabled="true">
+        <net.coru.kloadgen.config.kafkaheaders.KafkaHeadersConfigElement guiclass="TestBeanGUI" testclass="net.coru.kloadgen.config.kafkaheaders.KafkaHeadersConfigElement" testname="Kafka Headers Config Element" enabled="true">
           <collectionProp name="kafkaHeaders">
-            <elementProp name="" elementType="com.sngular.kloadgen.model.HeaderMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.HeaderMapping">
               <stringProp name="headerName">message_id</stringProp>
               <stringProp name="headerValue">uuid</stringProp>
             </elementProp>
-            <elementProp name="" elementType="com.sngular.kloadgen.model.HeaderMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.HeaderMapping">
               <stringProp name="headerName">publication_timestamp</stringProp>
               <stringProp name="headerValue">stringTimestamp</stringProp>
             </elementProp>
-            <elementProp name="" elementType="com.sngular.kloadgen.model.HeaderMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.HeaderMapping">
               <stringProp name="headerName">producer_id</stringProp>
               <stringProp name="headerValue">producer_id_1</stringProp>
             </elementProp>
-            <elementProp name="" elementType="com.sngular.kloadgen.model.HeaderMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.HeaderMapping">
               <stringProp name="headerName">topic</stringProp>
               <stringProp name="headerValue">test-topic</stringProp>
             </elementProp>
-            <elementProp name="" elementType="com.sngular.kloadgen.model.HeaderMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.HeaderMapping">
               <stringProp name="headerName">envelope_id</stringProp>
               <stringProp name="headerValue">envelope-id</stringProp>
             </elementProp>
-            <elementProp name="" elementType="com.sngular.kloadgen.model.HeaderMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.HeaderMapping">
               <stringProp name="headerName">contentType</stringProp>
               <stringProp name="headerValue">application/*+avro</stringProp>
             </elementProp>
           </collectionProp>
-        </com.sngular.kloadgen.config.kafkaheaders.KafkaHeadersConfigElement>
+        </net.coru.kloadgen.config.kafkaheaders.KafkaHeadersConfigElement>
         <hashTree/>
-        <com.sngular.kloadgen.config.valueserialized.ValueSerializedConfigElement guiclass="TestBeanGUI" testclass="com.sngular.kloadgen.config.valueserialized.ValueSerializedConfigElement" testname="Value Schema Load Generator Config" enabled="true">
+        <net.coru.kloadgen.config.valueserialized.ValueSerializedConfigElement guiclass="TestBeanGUI" testclass="net.coru.kloadgen.config.valueserialized.ValueSerializedConfigElement" testname="Value Schema Load Generator Config" enabled="true">
           <stringProp name="avroSubject"></stringProp>
           <collectionProp name="valueSchemaProperties">
-            <elementProp name="" elementType="com.sngular.kloadgen.model.FieldValueMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.FieldValueMapping">
               <stringProp name="fieldName">id</stringProp>
               <intProp name="valueLength">0</intProp>
               <stringProp name="fieldType">string</stringProp>
             </elementProp>
-            <elementProp name="" elementType="com.sngular.kloadgen.model.FieldValueMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.FieldValueMapping">
               <stringProp name="fieldName">accountNumber</stringProp>
               <intProp name="valueLength">0</intProp>
               <stringProp name="fieldType">string</stringProp>
               <stringProp name="fieldValuesList">[${accountNumber}]</stringProp>
             </elementProp>
-            <elementProp name="" elementType="com.sngular.kloadgen.model.FieldValueMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.FieldValueMapping">
               <stringProp name="fieldName">movement</stringProp>
               <intProp name="valueLength">0</intProp>
               <stringProp name="fieldType">enum</stringProp>
@@ -680,12 +680,12 @@
               <boolProp name="required">true</boolProp>
               <boolProp name="ancestorRequired">true</boolProp>
             </elementProp>
-            <elementProp name="" elementType="com.sngular.kloadgen.model.FieldValueMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.FieldValueMapping">
               <stringProp name="fieldName">amount</stringProp>
               <intProp name="valueLength">0</intProp>
               <stringProp name="fieldType">float</stringProp>
             </elementProp>
-            <elementProp name="" elementType="com.sngular.kloadgen.model.FieldValueMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.FieldValueMapping">
               <stringProp name="fieldName">movementDate</stringProp>
               <intProp name="valueLength">0</intProp>
               <stringProp name="fieldType">long_local-timestamp-millis</stringProp>
@@ -693,7 +693,7 @@
               <boolProp name="required">true</boolProp>
               <boolProp name="ancestorRequired">true</boolProp>
             </elementProp>
-            <elementProp name="" elementType="com.sngular.kloadgen.model.FieldValueMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.FieldValueMapping">
               <stringProp name="fieldName">appliedDate</stringProp>
               <intProp name="valueLength">0</intProp>
               <stringProp name="fieldType">long_local-timestamp-millis</stringProp>
@@ -702,11 +702,11 @@
               <boolProp name="ancestorRequired">true</boolProp>
             </elementProp>
           </collectionProp>
-          <stringProp name="valueSubjectName">com.sngular.kloadgen.demo.BankMovementEvent</stringProp>
+          <stringProp name="valueSubjectName">com.sngular.event.contracts.bankserver.BankMovementEvent</stringProp>
           <stringProp name="valueSchemaType">AVRO</stringProp>
           <stringProp name="valueNameStrategy">io.confluent.kafka.serializers.subject.TopicNameStrategy</stringProp>
-          <stringProp name="valueSerializerConfiguration">com.sngular.kloadgen.serializer.AvroSerializer</stringProp>
-        </com.sngular.kloadgen.config.valueserialized.ValueSerializedConfigElement>
+          <stringProp name="valueSerializerConfiguration">net.coru.kloadgen.serializer.AvroSerializer</stringProp>
+        </net.coru.kloadgen.config.valueserialized.ValueSerializedConfigElement>
         <hashTree/>
         <JavaSampler guiclass="JavaTestSamplerGui" testclass="JavaSampler" testname="Kafka Producer Properties" enabled="true">
           <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
@@ -723,7 +723,7 @@
               </elementProp>
               <elementProp name="kafka.topic.name" elementType="Argument">
                 <stringProp name="Argument.name">kafka.topic.name</stringProp>
-                <stringProp name="Argument.value">com.sngular.kloadgen.bank.movement</stringProp>
+                <stringProp name="Argument.value">net.coru.kloadgen.bank.movement</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
               <elementProp name="compression.type" elementType="Argument">
@@ -873,40 +873,40 @@
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="classname">com.sngular.kloadgen.sampler.KafkaSchemaSampler</stringProp>
+          <stringProp name="classname">net.coru.kloadgen.sampler.KafkaSchemaSampler</stringProp>
         </JavaSampler>
         <hashTree/>
-        <com.sngular.kloadgen.config.schemaregistry.SchemaRegistryConfigElement guiclass="TestBeanGUI" testclass="com.sngular.kloadgen.config.schemaregistry.SchemaRegistryConfigElement" testname="Schema Registry Config Element" enabled="true">
+        <net.coru.kloadgen.config.schemaregistry.SchemaRegistryConfigElement guiclass="TestBeanGUI" testclass="net.coru.kloadgen.config.schemaregistry.SchemaRegistryConfigElement" testname="Schema Registry Config Element" enabled="true">
           <stringProp name="schemaRegistryUrl">http://localhost:8081</stringProp>
           <collectionProp name="schemaRegistryProperties">
-            <elementProp name="Config properties" elementType="com.sngular.kloadgen.model.PropertyMapping" testname="Config properties">
+            <elementProp name="Config properties" elementType="net.coru.kloadgen.model.PropertyMapping" testname="Config properties">
               <stringProp name="propertyName">schema.registry.auth.enabled</stringProp>
               <stringProp name="propertyValue">NO</stringProp>
             </elementProp>
-            <elementProp name="Config properties" elementType="com.sngular.kloadgen.model.PropertyMapping" testname="Config properties">
+            <elementProp name="Config properties" elementType="net.coru.kloadgen.model.PropertyMapping" testname="Config properties">
               <stringProp name="propertyName">schema.registry.auth.method</stringProp>
               <stringProp name="propertyValue">BASIC</stringProp>
             </elementProp>
-            <elementProp name="Config properties" elementType="com.sngular.kloadgen.model.PropertyMapping" testname="Config properties">
+            <elementProp name="Config properties" elementType="net.coru.kloadgen.model.PropertyMapping" testname="Config properties">
               <stringProp name="propertyName">schema.registry.username</stringProp>
               <stringProp name="propertyValue">&lt;username&gt;</stringProp>
             </elementProp>
-            <elementProp name="Config properties" elementType="com.sngular.kloadgen.model.PropertyMapping" testname="Config properties">
+            <elementProp name="Config properties" elementType="net.coru.kloadgen.model.PropertyMapping" testname="Config properties">
               <stringProp name="propertyName">schema.registry.password</stringProp>
               <stringProp name="propertyValue">&lt;password&gt;</stringProp>
             </elementProp>
-            <elementProp name="Config properties" elementType="com.sngular.kloadgen.model.PropertyMapping" testname="Config properties">
+            <elementProp name="Config properties" elementType="net.coru.kloadgen.model.PropertyMapping" testname="Config properties">
               <stringProp name="propertyName">schema.registry.bearer</stringProp>
               <stringProp name="propertyValue">&lt;bearer&gt;</stringProp>
             </elementProp>
           </collectionProp>
-        </com.sngular.kloadgen.config.schemaregistry.SchemaRegistryConfigElement>
+        </net.coru.kloadgen.config.schemaregistry.SchemaRegistryConfigElement>
         <hashTree/>
-        <com.sngular.kloadgen.config.keysimple.KeySimpleConfigElement guiclass="TestBeanGUI" testclass="com.sngular.kloadgen.config.keysimple.KeySimpleConfigElement" testname="Key Plain Load Generator Config" enabled="true">
+        <net.coru.kloadgen.config.keysimple.KeySimpleConfigElement guiclass="TestBeanGUI" testclass="net.coru.kloadgen.config.keysimple.KeySimpleConfigElement" testname="Key Plain Load Generator Config" enabled="true">
           <stringProp name="keySerializerConfiguration">org.apache.kafka.common.serialization.StringSerializer</stringProp>
           <stringProp name="keyType">string</stringProp>
           <stringProp name="keyValue">${__RandomString(5,,)}</stringProp>
-        </com.sngular.kloadgen.config.keysimple.KeySimpleConfigElement>
+        </net.coru.kloadgen.config.keysimple.KeySimpleConfigElement>
         <hashTree/>
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
@@ -975,7 +975,7 @@
               </elementProp>
               <elementProp name="kafka.topic.name" elementType="Argument">
                 <stringProp name="Argument.name">kafka.topic.name</stringProp>
-                <stringProp name="Argument.value">com.sngular.kloadgen.bank.movement</stringProp>
+                <stringProp name="Argument.value">net.coru.kloadgen.bank.movement</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
               <elementProp name="send.buffer.bytes" elementType="Argument">
@@ -1130,7 +1130,7 @@
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="classname">com.sngular.kloadgen.sampler.KafkaConsumerSampler</stringProp>
+          <stringProp name="classname">net.coru.kloadgen.sampler.KafkaConsumerSampler</stringProp>
         </JavaSampler>
         <hashTree/>
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
@@ -1170,37 +1170,37 @@
           <stringProp name="filename"></stringProp>
         </ResultCollector>
         <hashTree/>
-        <com.sngular.kloadgen.config.valuedeserialized.ValueDeserializedConfigElement guiclass="TestBeanGUI" testclass="com.sngular.kloadgen.config.valuedeserialized.ValueDeserializedConfigElement" testname="Value Schema Deserialization Configuration" enabled="true">
+        <net.coru.kloadgen.config.valuedeserialized.ValueDeserializedConfigElement guiclass="TestBeanGUI" testclass="net.coru.kloadgen.config.valuedeserialized.ValueDeserializedConfigElement" testname="Value Schema Deserialization Configuration" enabled="true">
           <stringProp name="valueDeSerializerConfiguration">io.confluent.kafka.serializers.KafkaAvroDeserializer</stringProp>
           <stringProp name="valueNameStrategy">io.confluent.kafka.serializers.subject.TopicNameStrategy</stringProp>
           <stringProp name="valueSchemaType">&lt;avro subject&gt;</stringProp>
-        </com.sngular.kloadgen.config.valuedeserialized.ValueDeserializedConfigElement>
+        </net.coru.kloadgen.config.valuedeserialized.ValueDeserializedConfigElement>
         <hashTree/>
-        <com.sngular.kloadgen.config.schemaregistry.SchemaRegistryConfigElement guiclass="TestBeanGUI" testclass="com.sngular.kloadgen.config.schemaregistry.SchemaRegistryConfigElement" testname="Schema Registry Config Element" enabled="true">
+        <net.coru.kloadgen.config.schemaregistry.SchemaRegistryConfigElement guiclass="TestBeanGUI" testclass="net.coru.kloadgen.config.schemaregistry.SchemaRegistryConfigElement" testname="Schema Registry Config Element" enabled="true">
           <stringProp name="schemaRegistryUrl">http://localhost:8081</stringProp>
           <collectionProp name="schemaRegistryProperties">
-            <elementProp name="Config properties" elementType="com.sngular.kloadgen.model.PropertyMapping" testname="Config properties">
+            <elementProp name="Config properties" elementType="net.coru.kloadgen.model.PropertyMapping" testname="Config properties">
               <stringProp name="propertyName">schema.registry.auth.enabled</stringProp>
               <stringProp name="propertyValue">NO</stringProp>
             </elementProp>
-            <elementProp name="Config properties" elementType="com.sngular.kloadgen.model.PropertyMapping" testname="Config properties">
+            <elementProp name="Config properties" elementType="net.coru.kloadgen.model.PropertyMapping" testname="Config properties">
               <stringProp name="propertyName">schema.registry.auth.method</stringProp>
               <stringProp name="propertyValue">BASIC</stringProp>
             </elementProp>
-            <elementProp name="Config properties" elementType="com.sngular.kloadgen.model.PropertyMapping" testname="Config properties">
+            <elementProp name="Config properties" elementType="net.coru.kloadgen.model.PropertyMapping" testname="Config properties">
               <stringProp name="propertyName">schema.registry.username</stringProp>
               <stringProp name="propertyValue">&lt;username&gt;</stringProp>
             </elementProp>
-            <elementProp name="Config properties" elementType="com.sngular.kloadgen.model.PropertyMapping" testname="Config properties">
+            <elementProp name="Config properties" elementType="net.coru.kloadgen.model.PropertyMapping" testname="Config properties">
               <stringProp name="propertyName">schema.registry.password</stringProp>
               <stringProp name="propertyValue">&lt;password&gt;</stringProp>
             </elementProp>
-            <elementProp name="Config properties" elementType="com.sngular.kloadgen.model.PropertyMapping" testname="Config properties">
+            <elementProp name="Config properties" elementType="net.coru.kloadgen.model.PropertyMapping" testname="Config properties">
               <stringProp name="propertyName">schema.registry.bearer</stringProp>
               <stringProp name="propertyValue">&lt;bearer&gt;</stringProp>
             </elementProp>
           </collectionProp>
-        </com.sngular.kloadgen.config.schemaregistry.SchemaRegistryConfigElement>
+        </net.coru.kloadgen.config.schemaregistry.SchemaRegistryConfigElement>
         <hashTree/>
       </hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="BankAccountProducerNoSchemaRegistry" enabled="false">
@@ -1232,7 +1232,7 @@
               </elementProp>
               <elementProp name="kafka.topic.name" elementType="Argument">
                 <stringProp name="Argument.name">kafka.topic.name</stringProp>
-                <stringProp name="Argument.value">com.sngular.kloadgen.bank.account</stringProp>
+                <stringProp name="Argument.value">net.coru.kloadgen.bank.account</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
               <elementProp name="compression.type" elementType="Argument">
@@ -1382,60 +1382,60 @@
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="classname">com.sngular.kloadgen.sampler.KafkaSchemaSampler</stringProp>
+          <stringProp name="classname">net.coru.kloadgen.sampler.KafkaSchemaSampler</stringProp>
         </JavaSampler>
         <hashTree/>
-        <com.sngular.kloadgen.config.valuefileserialized.ValueFileSerializedConfigElement guiclass="TestBeanGUI" testclass="com.sngular.kloadgen.config.valuefileserialized.ValueFileSerializedConfigElement" testname="Value Schema File Load Generator Config" enabled="true">
+        <net.coru.kloadgen.config.valuefileserialized.ValueFileSerializedConfigElement guiclass="TestBeanGUI" testclass="net.coru.kloadgen.config.valuefileserialized.ValueFileSerializedConfigElement" testname="Value Schema File Load Generator Config" enabled="true">
           <stringProp name="valueNameStrategy">io.confluent.kafka.serializers.subject.TopicNameStrategy</stringProp>
-          <stringProp name="valueSerializerConfiguration">com.sngular.kloadgen.serializer.AvroSerializer</stringProp>
+          <stringProp name="valueSerializerConfiguration">net.coru.kloadgen.serializer.AvroSerializer</stringProp>
           <stringProp name="valueSchemaType">AVRO</stringProp>
-          <stringProp name="valueSubjectName">com.sngular.kloadgen.demo.BankAccountEvent</stringProp>
+          <stringProp name="valueSubjectName">com.sngular.event.contracts.bankserver.BankAccountEvent</stringProp>
           <collectionProp name="valueSchemaProperties">
-            <elementProp name="" elementType="com.sngular.kloadgen.model.FieldValueMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.FieldValueMapping">
               <stringProp name="fieldName">id</stringProp>
               <intProp name="valueLength">0</intProp>
               <stringProp name="fieldType">string</stringProp>
             </elementProp>
-            <elementProp name="" elementType="com.sngular.kloadgen.model.FieldValueMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.FieldValueMapping">
               <stringProp name="fieldName">name</stringProp>
               <intProp name="valueLength">0</intProp>
               <stringProp name="fieldType">string</stringProp>
             </elementProp>
-            <elementProp name="" elementType="com.sngular.kloadgen.model.FieldValueMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.FieldValueMapping">
               <stringProp name="fieldName">accountNumber</stringProp>
               <intProp name="valueLength">0</intProp>
               <stringProp name="fieldType">string</stringProp>
             </elementProp>
-            <elementProp name="" elementType="com.sngular.kloadgen.model.FieldValueMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.FieldValueMapping">
               <stringProp name="fieldName">version</stringProp>
               <intProp name="valueLength">0</intProp>
               <stringProp name="fieldType">int</stringProp>
               <stringProp name="fieldValuesList">[]</stringProp>
             </elementProp>
-            <elementProp name="" elementType="com.sngular.kloadgen.model.FieldValueMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.FieldValueMapping">
               <stringProp name="fieldName">amount</stringProp>
               <intProp name="valueLength">0</intProp>
               <stringProp name="fieldType">float</stringProp>
             </elementProp>
-            <elementProp name="" elementType="com.sngular.kloadgen.model.FieldValueMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.FieldValueMapping">
               <stringProp name="fieldName">lastUpdateDate</stringProp>
               <intProp name="valueLength">0</intProp>
               <stringProp name="fieldType">long</stringProp>
             </elementProp>
-            <elementProp name="" elementType="com.sngular.kloadgen.model.FieldValueMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.FieldValueMapping">
               <stringProp name="fieldName">creationDate</stringProp>
               <intProp name="valueLength">0</intProp>
               <stringProp name="fieldType">long</stringProp>
             </elementProp>
           </collectionProp>
-          <stringProp name="valueSchemaDefinition">{&quot;type&quot;:&quot;record&quot;,&quot;name&quot;:&quot;BankAccountEvent&quot;,&quot;namespace&quot;:&quot;com.sngular.kloadgen.demo&quot;,&quot;doc&quot;:&quot;Container for the banking movement.&quot;,&quot;fields&quot;:[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;string&quot;,&quot;doc&quot;:&quot;Account Id&quot;},{&quot;name&quot;:&quot;name&quot;,&quot;type&quot;:&quot;string&quot;,&quot;doc&quot;:&quot;Account name&quot;},{&quot;name&quot;:&quot;accountNumber&quot;,&quot;type&quot;:&quot;string&quot;,&quot;doc&quot;:&quot;Movement account Number&quot;},{&quot;name&quot;:&quot;version&quot;,&quot;type&quot;:&quot;int&quot;,&quot;doc&quot;:&quot;Account version&quot;},{&quot;name&quot;:&quot;amount&quot;,&quot;type&quot;:&quot;float&quot;,&quot;doc&quot;:&quot;Movement amount&quot;},{&quot;name&quot;:&quot;lastUpdateDate&quot;,&quot;type&quot;:{&quot;type&quot;:&quot;long&quot;,&quot;logicalType&quot;:&quot;local-timestamp-millis&quot;},&quot;doc&quot;:&quot;Last Account Update Date Time&quot;},{&quot;name&quot;:&quot;creationDate&quot;,&quot;type&quot;:{&quot;type&quot;:&quot;long&quot;,&quot;logicalType&quot;:&quot;local-timestamp-millis&quot;},&quot;doc&quot;:&quot;Account Creation Date Time&quot;}]}</stringProp>
-        </com.sngular.kloadgen.config.valuefileserialized.ValueFileSerializedConfigElement>
+          <stringProp name="valueSchemaDefinition">{&quot;type&quot;:&quot;record&quot;,&quot;name&quot;:&quot;BankAccountEvent&quot;,&quot;namespace&quot;:&quot;net.coru.kloadgen.demo&quot;,&quot;doc&quot;:&quot;Container for the banking movement.&quot;,&quot;fields&quot;:[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;string&quot;,&quot;doc&quot;:&quot;Account Id&quot;},{&quot;name&quot;:&quot;name&quot;,&quot;type&quot;:&quot;string&quot;,&quot;doc&quot;:&quot;Account name&quot;},{&quot;name&quot;:&quot;accountNumber&quot;,&quot;type&quot;:&quot;string&quot;,&quot;doc&quot;:&quot;Movement account Number&quot;},{&quot;name&quot;:&quot;version&quot;,&quot;type&quot;:&quot;int&quot;,&quot;doc&quot;:&quot;Account version&quot;},{&quot;name&quot;:&quot;amount&quot;,&quot;type&quot;:&quot;float&quot;,&quot;doc&quot;:&quot;Movement amount&quot;},{&quot;name&quot;:&quot;lastUpdateDate&quot;,&quot;type&quot;:{&quot;type&quot;:&quot;long&quot;,&quot;logicalType&quot;:&quot;local-timestamp-millis&quot;},&quot;doc&quot;:&quot;Last Account Update Date Time&quot;},{&quot;name&quot;:&quot;creationDate&quot;,&quot;type&quot;:{&quot;type&quot;:&quot;long&quot;,&quot;logicalType&quot;:&quot;local-timestamp-millis&quot;},&quot;doc&quot;:&quot;Account Creation Date Time&quot;}]}</stringProp>
+        </net.coru.kloadgen.config.valuefileserialized.ValueFileSerializedConfigElement>
         <hashTree/>
-        <com.sngular.kloadgen.config.keysimple.KeySimpleConfigElement guiclass="TestBeanGUI" testclass="com.sngular.kloadgen.config.keysimple.KeySimpleConfigElement" testname="Key Plain Load Generator Config" enabled="true">
+        <net.coru.kloadgen.config.keysimple.KeySimpleConfigElement guiclass="TestBeanGUI" testclass="net.coru.kloadgen.config.keysimple.KeySimpleConfigElement" testname="Key Plain Load Generator Config" enabled="true">
           <stringProp name="keyValue">${__RandomString(5,,)}</stringProp>
           <stringProp name="keyType">string</stringProp>
           <stringProp name="keySerializerConfiguration">org.apache.kafka.common.serialization.StringSerializer</stringProp>
-        </com.sngular.kloadgen.config.keysimple.KeySimpleConfigElement>
+        </net.coru.kloadgen.config.keysimple.KeySimpleConfigElement>
         <hashTree/>
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
@@ -1504,7 +1504,7 @@
               </elementProp>
               <elementProp name="kafka.topic.name" elementType="Argument">
                 <stringProp name="Argument.name">kafka.topic.name</stringProp>
-                <stringProp name="Argument.value">com.sngular.kloadgen.bank.account</stringProp>
+                <stringProp name="Argument.value">net.coru.kloadgen.bank.account</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
               <elementProp name="send.buffer.bytes" elementType="Argument">
@@ -1659,52 +1659,52 @@
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="classname">com.sngular.kloadgen.sampler.KafkaConsumerSampler</stringProp>
+          <stringProp name="classname">net.coru.kloadgen.sampler.KafkaConsumerSampler</stringProp>
         </JavaSampler>
         <hashTree/>
-        <com.sngular.kloadgen.config.valuefiledeserialized.ValueFileDeserializedConfigElement guiclass="TestBeanGUI" testclass="com.sngular.kloadgen.config.valuefiledeserialized.ValueFileDeserializedConfigElement" testname="Value Schema File Deserialization Configuration" enabled="true">
-          <stringProp name="valueDeSerializerConfiguration">com.sngular.kloadgen.serializer.AvroDeserializer</stringProp>
-          <stringProp name="valueSchemaDefinition">{&quot;type&quot;:&quot;record&quot;,&quot;name&quot;:&quot;BankAccountEvent&quot;,&quot;namespace&quot;:&quot;com.sngular.kloadgen.demo&quot;,&quot;doc&quot;:&quot;Container for the banking movement.&quot;,&quot;fields&quot;:[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;string&quot;,&quot;doc&quot;:&quot;Account Id&quot;},{&quot;name&quot;:&quot;name&quot;,&quot;type&quot;:&quot;string&quot;,&quot;doc&quot;:&quot;Account name&quot;},{&quot;name&quot;:&quot;accountNumber&quot;,&quot;type&quot;:&quot;string&quot;,&quot;doc&quot;:&quot;Movement account Number&quot;},{&quot;name&quot;:&quot;version&quot;,&quot;type&quot;:&quot;int&quot;,&quot;doc&quot;:&quot;Account version&quot;},{&quot;name&quot;:&quot;amount&quot;,&quot;type&quot;:&quot;float&quot;,&quot;doc&quot;:&quot;Movement amount&quot;},{&quot;name&quot;:&quot;lastUpdateDate&quot;,&quot;type&quot;:{&quot;type&quot;:&quot;long&quot;,&quot;logicalType&quot;:&quot;local-timestamp-millis&quot;},&quot;doc&quot;:&quot;Last Account Update Date Time&quot;},{&quot;name&quot;:&quot;creationDate&quot;,&quot;type&quot;:{&quot;type&quot;:&quot;long&quot;,&quot;logicalType&quot;:&quot;local-timestamp-millis&quot;},&quot;doc&quot;:&quot;Account Creation Date Time&quot;}]}</stringProp>
+        <net.coru.kloadgen.config.valuefiledeserialized.ValueFileDeserializedConfigElement guiclass="TestBeanGUI" testclass="net.coru.kloadgen.config.valuefiledeserialized.ValueFileDeserializedConfigElement" testname="Value Schema File Deserialization Configuration" enabled="true">
+          <stringProp name="valueDeSerializerConfiguration">net.coru.kloadgen.serializer.AvroDeserializer</stringProp>
+          <stringProp name="valueSchemaDefinition">{&quot;type&quot;:&quot;record&quot;,&quot;name&quot;:&quot;BankAccountEvent&quot;,&quot;namespace&quot;:&quot;net.coru.kloadgen.demo&quot;,&quot;doc&quot;:&quot;Container for the banking movement.&quot;,&quot;fields&quot;:[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;string&quot;,&quot;doc&quot;:&quot;Account Id&quot;},{&quot;name&quot;:&quot;name&quot;,&quot;type&quot;:&quot;string&quot;,&quot;doc&quot;:&quot;Account name&quot;},{&quot;name&quot;:&quot;accountNumber&quot;,&quot;type&quot;:&quot;string&quot;,&quot;doc&quot;:&quot;Movement account Number&quot;},{&quot;name&quot;:&quot;version&quot;,&quot;type&quot;:&quot;int&quot;,&quot;doc&quot;:&quot;Account version&quot;},{&quot;name&quot;:&quot;amount&quot;,&quot;type&quot;:&quot;float&quot;,&quot;doc&quot;:&quot;Movement amount&quot;},{&quot;name&quot;:&quot;lastUpdateDate&quot;,&quot;type&quot;:{&quot;type&quot;:&quot;long&quot;,&quot;logicalType&quot;:&quot;local-timestamp-millis&quot;},&quot;doc&quot;:&quot;Last Account Update Date Time&quot;},{&quot;name&quot;:&quot;creationDate&quot;,&quot;type&quot;:{&quot;type&quot;:&quot;long&quot;,&quot;logicalType&quot;:&quot;local-timestamp-millis&quot;},&quot;doc&quot;:&quot;Account Creation Date Time&quot;}]}</stringProp>
           <collectionProp name="valueSchemaProperties">
-            <elementProp name="" elementType="com.sngular.kloadgen.model.FieldValueMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.FieldValueMapping">
               <stringProp name="fieldName">id</stringProp>
               <intProp name="valueLength">0</intProp>
               <stringProp name="fieldType">string</stringProp>
             </elementProp>
-            <elementProp name="" elementType="com.sngular.kloadgen.model.FieldValueMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.FieldValueMapping">
               <stringProp name="fieldName">name</stringProp>
               <intProp name="valueLength">0</intProp>
               <stringProp name="fieldType">string</stringProp>
             </elementProp>
-            <elementProp name="" elementType="com.sngular.kloadgen.model.FieldValueMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.FieldValueMapping">
               <stringProp name="fieldName">accountNumber</stringProp>
               <intProp name="valueLength">0</intProp>
               <stringProp name="fieldType">string</stringProp>
             </elementProp>
-            <elementProp name="" elementType="com.sngular.kloadgen.model.FieldValueMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.FieldValueMapping">
               <stringProp name="fieldName">version</stringProp>
               <intProp name="valueLength">0</intProp>
               <stringProp name="fieldType">int</stringProp>
             </elementProp>
-            <elementProp name="" elementType="com.sngular.kloadgen.model.FieldValueMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.FieldValueMapping">
               <stringProp name="fieldName">amount</stringProp>
               <intProp name="valueLength">0</intProp>
               <stringProp name="fieldType">float</stringProp>
             </elementProp>
-            <elementProp name="" elementType="com.sngular.kloadgen.model.FieldValueMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.FieldValueMapping">
               <stringProp name="fieldName">lastUpdateDate</stringProp>
               <intProp name="valueLength">0</intProp>
               <stringProp name="fieldType">long</stringProp>
             </elementProp>
-            <elementProp name="" elementType="com.sngular.kloadgen.model.FieldValueMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.FieldValueMapping">
               <stringProp name="fieldName">creationDate</stringProp>
               <intProp name="valueLength">0</intProp>
               <stringProp name="fieldType">long</stringProp>
             </elementProp>
           </collectionProp>
           <stringProp name="valueSchemaType">AVRO</stringProp>
-          <stringProp name="valueSubjectName">com.sngular.kloadgen.demo.BankAccountEvent</stringProp>
-        </com.sngular.kloadgen.config.valuefiledeserialized.ValueFileDeserializedConfigElement>
+          <stringProp name="valueSubjectName">com.sngular.event.contracts.bankserver.BankAccountEvent</stringProp>
+        </net.coru.kloadgen.config.valuefiledeserialized.ValueFileDeserializedConfigElement>
         <hashTree/>
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
@@ -1810,7 +1810,7 @@
               </elementProp>
               <elementProp name="kafka.topic.name" elementType="Argument">
                 <stringProp name="Argument.name">kafka.topic.name</stringProp>
-                <stringProp name="Argument.value">com.sngular.kloadgen.bank.movement</stringProp>
+                <stringProp name="Argument.value">net.coru.kloadgen.bank.movement</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
               <elementProp name="compression.type" elementType="Argument">
@@ -1960,54 +1960,54 @@
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="classname">com.sngular.kloadgen.sampler.KafkaSchemaSampler</stringProp>
+          <stringProp name="classname">net.coru.kloadgen.sampler.KafkaSchemaSampler</stringProp>
         </JavaSampler>
         <hashTree/>
-        <com.sngular.kloadgen.config.valuefileserialized.ValueFileSerializedConfigElement guiclass="TestBeanGUI" testclass="com.sngular.kloadgen.config.valuefileserialized.ValueFileSerializedConfigElement" testname="Value Schema File Load Generator Config" enabled="true">
+        <net.coru.kloadgen.config.valuefileserialized.ValueFileSerializedConfigElement guiclass="TestBeanGUI" testclass="net.coru.kloadgen.config.valuefileserialized.ValueFileSerializedConfigElement" testname="Value Schema File Load Generator Config" enabled="true">
           <stringProp name="valueNameStrategy">io.confluent.kafka.serializers.subject.TopicNameStrategy</stringProp>
-          <stringProp name="valueSerializerConfiguration">com.sngular.kloadgen.serializer.AvroSerializer</stringProp>
+          <stringProp name="valueSerializerConfiguration">net.coru.kloadgen.serializer.AvroSerializer</stringProp>
           <stringProp name="valueSchemaType">AVRO</stringProp>
-          <stringProp name="valueSubjectName">com.sngular.kloadgen.demo.BankMovementEvent</stringProp>
+          <stringProp name="valueSubjectName">com.sngular.event.contracts.bankserver.BankMovementEvent</stringProp>
           <collectionProp name="valueSchemaProperties">
-            <elementProp name="" elementType="com.sngular.kloadgen.model.FieldValueMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.FieldValueMapping">
               <stringProp name="fieldName">id</stringProp>
               <intProp name="valueLength">0</intProp>
               <stringProp name="fieldType">string</stringProp>
             </elementProp>
-            <elementProp name="" elementType="com.sngular.kloadgen.model.FieldValueMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.FieldValueMapping">
               <stringProp name="fieldName">accountNumber</stringProp>
               <intProp name="valueLength">0</intProp>
               <stringProp name="fieldType">string</stringProp>
             </elementProp>
-            <elementProp name="" elementType="com.sngular.kloadgen.model.FieldValueMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.FieldValueMapping">
               <stringProp name="fieldName">movement</stringProp>
               <intProp name="valueLength">0</intProp>
               <stringProp name="fieldType">enum</stringProp>
             </elementProp>
-            <elementProp name="" elementType="com.sngular.kloadgen.model.FieldValueMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.FieldValueMapping">
               <stringProp name="fieldName">amount</stringProp>
               <intProp name="valueLength">0</intProp>
               <stringProp name="fieldType">float</stringProp>
             </elementProp>
-            <elementProp name="" elementType="com.sngular.kloadgen.model.FieldValueMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.FieldValueMapping">
               <stringProp name="fieldName">movementDate</stringProp>
               <intProp name="valueLength">0</intProp>
               <stringProp name="fieldType">long</stringProp>
             </elementProp>
-            <elementProp name="" elementType="com.sngular.kloadgen.model.FieldValueMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.FieldValueMapping">
               <stringProp name="fieldName">appliedDate</stringProp>
               <intProp name="valueLength">0</intProp>
               <stringProp name="fieldType">long</stringProp>
             </elementProp>
           </collectionProp>
-          <stringProp name="valueSchemaDefinition">{&quot;type&quot;:&quot;record&quot;,&quot;name&quot;:&quot;BankMovementEvent&quot;,&quot;namespace&quot;:&quot;com.sngular.kloadgen.demo&quot;,&quot;doc&quot;:&quot;Container for the banking movement.&quot;,&quot;fields&quot;:[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;string&quot;,&quot;doc&quot;:&quot;Movement Id&quot;},{&quot;name&quot;:&quot;accountNumber&quot;,&quot;type&quot;:&quot;string&quot;,&quot;doc&quot;:&quot;Movement account Number&quot;},{&quot;name&quot;:&quot;movement&quot;,&quot;type&quot;:{&quot;type&quot;:&quot;enum&quot;,&quot;name&quot;:&quot;MovementType&quot;,&quot;doc&quot;:&quot;Movement Type&quot;,&quot;symbols&quot;:[&quot;DEPOSIT&quot;,&quot;WITHDRAW&quot;]}},{&quot;name&quot;:&quot;amount&quot;,&quot;type&quot;:&quot;float&quot;,&quot;doc&quot;:&quot;Movement amount&quot;},{&quot;name&quot;:&quot;movementDate&quot;,&quot;type&quot;:{&quot;type&quot;:&quot;long&quot;,&quot;logicalType&quot;:&quot;local-timestamp-millis&quot;},&quot;doc&quot;:&quot;Movement Date Time when was produced&quot;},{&quot;name&quot;:&quot;appliedDate&quot;,&quot;type&quot;:{&quot;type&quot;:&quot;long&quot;,&quot;logicalType&quot;:&quot;local-timestamp-millis&quot;},&quot;doc&quot;:&quot;Movement Date Time when was applied by the system&quot;}]}</stringProp>
-        </com.sngular.kloadgen.config.valuefileserialized.ValueFileSerializedConfigElement>
+          <stringProp name="valueSchemaDefinition">{&quot;type&quot;:&quot;record&quot;,&quot;name&quot;:&quot;BankMovementEvent&quot;,&quot;namespace&quot;:&quot;net.coru.kloadgen.demo&quot;,&quot;doc&quot;:&quot;Container for the banking movement.&quot;,&quot;fields&quot;:[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;string&quot;,&quot;doc&quot;:&quot;Movement Id&quot;},{&quot;name&quot;:&quot;accountNumber&quot;,&quot;type&quot;:&quot;string&quot;,&quot;doc&quot;:&quot;Movement account Number&quot;},{&quot;name&quot;:&quot;movement&quot;,&quot;type&quot;:{&quot;type&quot;:&quot;enum&quot;,&quot;name&quot;:&quot;MovementType&quot;,&quot;doc&quot;:&quot;Movement Type&quot;,&quot;symbols&quot;:[&quot;DEPOSIT&quot;,&quot;WITHDRAW&quot;]}},{&quot;name&quot;:&quot;amount&quot;,&quot;type&quot;:&quot;float&quot;,&quot;doc&quot;:&quot;Movement amount&quot;},{&quot;name&quot;:&quot;movementDate&quot;,&quot;type&quot;:{&quot;type&quot;:&quot;long&quot;,&quot;logicalType&quot;:&quot;local-timestamp-millis&quot;},&quot;doc&quot;:&quot;Movement Date Time when was produced&quot;},{&quot;name&quot;:&quot;appliedDate&quot;,&quot;type&quot;:{&quot;type&quot;:&quot;long&quot;,&quot;logicalType&quot;:&quot;local-timestamp-millis&quot;},&quot;doc&quot;:&quot;Movement Date Time when was applied by the system&quot;}]}</stringProp>
+        </net.coru.kloadgen.config.valuefileserialized.ValueFileSerializedConfigElement>
         <hashTree/>
-        <com.sngular.kloadgen.config.keysimple.KeySimpleConfigElement guiclass="TestBeanGUI" testclass="com.sngular.kloadgen.config.keysimple.KeySimpleConfigElement" testname="Key Plain Load Generator Config" enabled="true">
+        <net.coru.kloadgen.config.keysimple.KeySimpleConfigElement guiclass="TestBeanGUI" testclass="net.coru.kloadgen.config.keysimple.KeySimpleConfigElement" testname="Key Plain Load Generator Config" enabled="true">
           <stringProp name="keyValue">${__RandomString(5,,)}</stringProp>
           <stringProp name="keyType">string</stringProp>
           <stringProp name="keySerializerConfiguration">org.apache.kafka.common.serialization.StringSerializer</stringProp>
-        </com.sngular.kloadgen.config.keysimple.KeySimpleConfigElement>
+        </net.coru.kloadgen.config.keysimple.KeySimpleConfigElement>
         <hashTree/>
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
@@ -2076,7 +2076,7 @@
               </elementProp>
               <elementProp name="kafka.topic.name" elementType="Argument">
                 <stringProp name="Argument.name">kafka.topic.name</stringProp>
-                <stringProp name="Argument.value">com.sngular.kloadgen.bank.movement</stringProp>
+                <stringProp name="Argument.value">net.coru.kloadgen.bank.movement</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
               <elementProp name="send.buffer.bytes" elementType="Argument">
@@ -2231,47 +2231,47 @@
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="classname">com.sngular.kloadgen.sampler.KafkaConsumerSampler</stringProp>
+          <stringProp name="classname">net.coru.kloadgen.sampler.KafkaConsumerSampler</stringProp>
         </JavaSampler>
         <hashTree/>
-        <com.sngular.kloadgen.config.valuefiledeserialized.ValueFileDeserializedConfigElement guiclass="TestBeanGUI" testclass="com.sngular.kloadgen.config.valuefiledeserialized.ValueFileDeserializedConfigElement" testname="Value Schema File Deserialization Configuration" enabled="true">
-          <stringProp name="valueDeSerializerConfiguration">com.sngular.kloadgen.serializer.AvroDeserializer</stringProp>
-          <stringProp name="valueSchemaDefinition">{&quot;type&quot;:&quot;record&quot;,&quot;name&quot;:&quot;BankMovementEvent&quot;,&quot;namespace&quot;:&quot;com.sngular.kloadgen.demo&quot;,&quot;doc&quot;:&quot;Container for the banking movement.&quot;,&quot;fields&quot;:[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;string&quot;,&quot;doc&quot;:&quot;Movement Id&quot;},{&quot;name&quot;:&quot;accountNumber&quot;,&quot;type&quot;:&quot;string&quot;,&quot;doc&quot;:&quot;Movement account Number&quot;},{&quot;name&quot;:&quot;movement&quot;,&quot;type&quot;:{&quot;type&quot;:&quot;enum&quot;,&quot;name&quot;:&quot;MovementType&quot;,&quot;doc&quot;:&quot;Movement Type&quot;,&quot;symbols&quot;:[&quot;DEPOSIT&quot;,&quot;WITHDRAW&quot;]}},{&quot;name&quot;:&quot;amount&quot;,&quot;type&quot;:&quot;float&quot;,&quot;doc&quot;:&quot;Movement amount&quot;},{&quot;name&quot;:&quot;movementDate&quot;,&quot;type&quot;:{&quot;type&quot;:&quot;long&quot;,&quot;logicalType&quot;:&quot;local-timestamp-millis&quot;},&quot;doc&quot;:&quot;Movement Date Time when was produced&quot;},{&quot;name&quot;:&quot;appliedDate&quot;,&quot;type&quot;:{&quot;type&quot;:&quot;long&quot;,&quot;logicalType&quot;:&quot;local-timestamp-millis&quot;},&quot;doc&quot;:&quot;Movement Date Time when was applied by the system&quot;}]}</stringProp>
+        <net.coru.kloadgen.config.valuefiledeserialized.ValueFileDeserializedConfigElement guiclass="TestBeanGUI" testclass="net.coru.kloadgen.config.valuefiledeserialized.ValueFileDeserializedConfigElement" testname="Value Schema File Deserialization Configuration" enabled="true">
+          <stringProp name="valueDeSerializerConfiguration">net.coru.kloadgen.serializer.AvroDeserializer</stringProp>
+          <stringProp name="valueSchemaDefinition">{&quot;type&quot;:&quot;record&quot;,&quot;name&quot;:&quot;BankMovementEvent&quot;,&quot;namespace&quot;:&quot;net.coru.kloadgen.demo&quot;,&quot;doc&quot;:&quot;Container for the banking movement.&quot;,&quot;fields&quot;:[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;string&quot;,&quot;doc&quot;:&quot;Movement Id&quot;},{&quot;name&quot;:&quot;accountNumber&quot;,&quot;type&quot;:&quot;string&quot;,&quot;doc&quot;:&quot;Movement account Number&quot;},{&quot;name&quot;:&quot;movement&quot;,&quot;type&quot;:{&quot;type&quot;:&quot;enum&quot;,&quot;name&quot;:&quot;MovementType&quot;,&quot;doc&quot;:&quot;Movement Type&quot;,&quot;symbols&quot;:[&quot;DEPOSIT&quot;,&quot;WITHDRAW&quot;]}},{&quot;name&quot;:&quot;amount&quot;,&quot;type&quot;:&quot;float&quot;,&quot;doc&quot;:&quot;Movement amount&quot;},{&quot;name&quot;:&quot;movementDate&quot;,&quot;type&quot;:{&quot;type&quot;:&quot;long&quot;,&quot;logicalType&quot;:&quot;local-timestamp-millis&quot;},&quot;doc&quot;:&quot;Movement Date Time when was produced&quot;},{&quot;name&quot;:&quot;appliedDate&quot;,&quot;type&quot;:{&quot;type&quot;:&quot;long&quot;,&quot;logicalType&quot;:&quot;local-timestamp-millis&quot;},&quot;doc&quot;:&quot;Movement Date Time when was applied by the system&quot;}]}</stringProp>
           <collectionProp name="valueSchemaProperties">
-            <elementProp name="" elementType="com.sngular.kloadgen.model.FieldValueMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.FieldValueMapping">
               <stringProp name="fieldName">id</stringProp>
               <intProp name="valueLength">0</intProp>
               <stringProp name="fieldType">string</stringProp>
             </elementProp>
-            <elementProp name="" elementType="com.sngular.kloadgen.model.FieldValueMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.FieldValueMapping">
               <stringProp name="fieldName">accountNumber</stringProp>
               <intProp name="valueLength">0</intProp>
               <stringProp name="fieldType">string</stringProp>
             </elementProp>
-            <elementProp name="" elementType="com.sngular.kloadgen.model.FieldValueMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.FieldValueMapping">
               <stringProp name="fieldName">movement</stringProp>
               <intProp name="valueLength">0</intProp>
               <stringProp name="fieldType">enum</stringProp>
             </elementProp>
-            <elementProp name="" elementType="com.sngular.kloadgen.model.FieldValueMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.FieldValueMapping">
               <stringProp name="fieldName">amount</stringProp>
               <intProp name="valueLength">0</intProp>
               <stringProp name="fieldType">float</stringProp>
             </elementProp>
-            <elementProp name="" elementType="com.sngular.kloadgen.model.FieldValueMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.FieldValueMapping">
               <stringProp name="fieldName">movementDate</stringProp>
               <intProp name="valueLength">0</intProp>
               <stringProp name="fieldType">long</stringProp>
             </elementProp>
-            <elementProp name="" elementType="com.sngular.kloadgen.model.FieldValueMapping">
+            <elementProp name="" elementType="net.coru.kloadgen.model.FieldValueMapping">
               <stringProp name="fieldName">appliedDate</stringProp>
               <intProp name="valueLength">0</intProp>
               <stringProp name="fieldType">long</stringProp>
             </elementProp>
           </collectionProp>
           <stringProp name="valueSchemaType">AVRO</stringProp>
-          <stringProp name="valueSubjectName">com.sngular.kloadgen.demo.BankMovementEvent</stringProp>
-        </com.sngular.kloadgen.config.valuefiledeserialized.ValueFileDeserializedConfigElement>
+          <stringProp name="valueSubjectName">com.sngular.event.contracts.bankserver.BankMovementEvent</stringProp>
+        </net.coru.kloadgen.config.valuefiledeserialized.ValueFileDeserializedConfigElement>
         <hashTree/>
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>

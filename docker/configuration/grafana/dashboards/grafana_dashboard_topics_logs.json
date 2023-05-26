@@ -827,8 +827,8 @@
       {
         "current": {
           "selected": true,
-          "text": "com.sngular.kloadgen.bank.account",
-          "value": "com.sngular.kloadgen.bank.account"
+          "text": "net.coru.kloadgen.bank.account",
+          "value": "net.coru.kloadgen.bank.account"
         },
         "hide": 0,
         "includeAll": false,
@@ -838,16 +838,16 @@
         "options": [
           {
             "selected": true,
-            "text": "com.sngular.kloadgen.bank.account",
-            "value": "com.sngular.kloadgen.bank.account"
+            "text": "net.coru.kloadgen.bank.account",
+            "value": "net.coru.kloadgen.bank.account"
           },
           {
             "selected": false,
-            "text": "com.sngular.kloadgen.bank.movement",
-            "value": "com.sngular.kloadgen.bank.movement"
+            "text": "net.coru.kloadgen.bank.movement",
+            "value": "net.coru.kloadgen.bank.movement"
           }
         ],
-        "query": "com.sngular.kloadgen.bank.account, com.sngular.kloadgen.bank.movement",
+        "query": "net.coru.kloadgen.bank.account, net.coru.kloadgen.bank.movement",
         "queryValue": "",
         "skipUrlSync": false,
         "type": "custom"

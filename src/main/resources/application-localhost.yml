@@ -2,7 +2,7 @@ server:
   port: 8180
 logging:
   level:
-    root: INFO
+    root: debug
 spring:
   config:
     activate:
@@ -13,11 +13,14 @@ spring:
       port: 27017
       username: kloadgen
       password: kloadgen
-      database: bank-demo
+      database: bank-bankserver
   cloud:
     schemaRegistryClient:
       endpoint: http://localhost:2181
     stream:
+      function:
+        routing:
+          enabled: true
       kafka:
         binder:
           brokers: localhost
@@ -27,7 +30,7 @@ spring:
             schema.registry.url: http://localhost:8081
       schema:
         avro:
-          subjectNamingStrategy: io.confluent.kafka.serializers.subject.TopicNameStrategy
+          subjectNamingStrategy: strategy.com.sngular.event.contracts.bankserver.RecordSubjectNameStrategy
 management:
   endpoints:
     web:

@@ -444,8 +444,8 @@
       {
         "current": {
           "selected": false,
-          "text": "com.sngular.kloadgen.bank.movement",
-          "value": "com.sngular.kloadgen.bank.movement"
+          "text": "net.coru.kloadgen.bank.movement",
+          "value": "net.coru.kloadgen.bank.movement"
         },
         "hide": 0,
         "includeAll": false,
@@ -455,16 +455,16 @@
         "options": [
           {
             "selected": true,
-            "text": "com.sngular.kloadgen.bank.movement",
-            "value": "com.sngular.kloadgen.bank.movement"
+            "text": "net.coru.kloadgen.bank.movement",
+            "value": "net.coru.kloadgen.bank.movement"
           },
           {
             "selected": false,
-            "text": "com.sngular.kloadgen.bank.account",
-            "value": "com.sngular.kloadgen.bank.account"
+            "text": "net.coru.kloadgen.bank.account",
+            "value": "net.coru.kloadgen.bank.account"
           }
         ],
-        "query": "com.sngular.kloadgen.bank.movement, com.sngular.kloadgen.bank.account",
+        "query": "net.coru.kloadgen.bank.movement, net.coru.kloadgen.bank.account",
         "queryValue": "",
         "skipUrlSync": false,
         "type": "custom"
