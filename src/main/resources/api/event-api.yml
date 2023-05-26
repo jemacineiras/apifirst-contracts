@@ -25,16 +25,64 @@ channels:
       operationId: "accountEmitter"
       message:
         payload:
-          $ref: 'schema/bank_account.yml#/BankAccountEvent'
+          $ref: '#/components/schemas/BankAccountEvent'
   storeMovement:
     subscribe:
       operationId: "storeMovement"
       message:
         payload:
-          $ref: 'schema/bank_movement.yml#/BankMovementEvent'
+          $ref: '#/components/schemas/BankMovementEvent'
   storeAccount:
     subscribe:
       operationId: "storeAccount"
       message:
         payload:
-          $ref: 'schema/bank_account.yml#/BankAccountEvent'
+          $ref: '#/components/schemas/BankAccountEvent'
+components:
+  schemas:
+    BankAccountEvent:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        accountNumber:
+          type: string
+          pattern: "^0{1,3}[3-9]2"
+        amount:
+          type: float
+        lastUpdateDate:
+          type: string
+          format: date-time
+        creationDate:
+          type: string
+          format: date-time
+    BankMovementEvent:
+      type: object
+      properties:
+        id:
+          type: string
+          example:
+            0001
+        accountNumber:
+          type: string
+          # pattern: "^0{1,3}[3-9]2"
+          example:
+            "00035"
+        movement:
+          type: string
+          enum: [ "DEPOSIT", "WITHDRAW" ]
+          example:
+            "DEPOSIT"
+        amount:
+          type: number
+          format: float
+          example:
+            "10.45"
+        movementDate:
+          type: string
+          format: date-time
+        appliedDate:
+          type: string
+          format: date-time

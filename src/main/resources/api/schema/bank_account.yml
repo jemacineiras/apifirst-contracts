@@ -1,0 +1,18 @@
+BankAccountEvent:
+  type: object
+  properties:
+    id:
+      type: string
+    name:
+      type: string
+    accountNumber:
+      type: string
+      pattern: "^0{1,3}[3-9]2"
+    amount:
+      type: float
+    lastUpdateDate:
+      type: string
+      format: date-time
+    creationDate:
+      type: string
+      format: date-time

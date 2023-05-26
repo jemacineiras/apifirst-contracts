@@ -1,0 +1,42 @@
+logging:
+  level:
+    root: debug
+spring:
+  kafka:
+    bootstrap-servers: ${spring.embedded.kafka.brokers}
+  config:
+    activate:
+      on-profile: test
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      username: kloadgen
+      password: kloadgen
+      database: bank-bankserver
+  cloud:
+    stream:
+      bindings:
+        storeMovement-in-0:
+          destination: storeMovement
+        storeAccount-in-0:
+          destination: storeAccount
+        accountEmitter-out-0:
+          destination: storeAccount.refresh
+        processData-in-0:
+          destination: storeMovement
+        processData-out-0:
+          destination: storeAccount
+      schema-registry-client:
+        endpoint: http://localhost:2181
+      kafka:
+        binder:
+          defaultBrokerPort: 9092
+        producer-properties:
+          schema.registry.url: http://localhost:8081
+        consumer-properties:
+          schema.registry.url: http://localhost:8081
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
