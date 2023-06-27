@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 import com.sngular.event.contracts.bankserver.event.emitter.BankAccountEmitter;
 import com.sngular.event.contracts.bankserver.model.BankAccountEntity;
 import com.sngular.event.contracts.bankserver.model.BankMovementEntity;
+import com.sngular.event.contracts.bankserver.model.MovementType;
 import com.sngular.event.contracts.bankserver.service.BankProcessService;
 import io.micrometer.core.instrument.Counter;
 import org.junit.jupiter.api.TestInstance;
@@ -49,7 +50,7 @@ public class ContractVerifierBase {
                                         .builder()
                                         .id("id")
                                         .name("Jose")
-                                        .accountNumber("0039")
+                                        .accountNumber("0092")
                                         .amount(new BigDecimal("23.45"))
                                         .creationDate(LocalDateTime.now())
                                         .lastUpdateDate(LocalDateTime.now())
@@ -64,12 +65,14 @@ public class ContractVerifierBase {
     assertThat(value)
       .isNotNull()
       .isInstanceOf(BankMovementEntity.class)
-      /*.isEqualTo(BankMovementEntity.builder()
+      .usingRecursiveComparison()
+      .ignoringFields("movementDate", "appliedDate")
+      .isEqualTo(BankMovementEntity.builder()
                                   .id("1")
                                   .amount(BigDecimal.valueOf(10.45))
                                   .accountNumber("00001")
                                   .movement(MovementType.DEPOSIT)
-                                  .build())*/;
+                                  .build());
   }
 
   void storeAccountValidation() {
